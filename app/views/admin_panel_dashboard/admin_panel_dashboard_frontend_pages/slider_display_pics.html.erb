@@ -1,0 +1,174 @@
+<header  class="container-fluid" style="background-color:white">
+    <div class="row">
+        <div class="col-md-3" style="font-size:20px; padding-top:5px; padding-bottom:5px;">
+            <h4>
+                <b>
+                    <a href="/">Back to Home Page</a>
+                </b>
+            </h4>
+        </div>
+        <div class="col-md-7" align="center">
+            <h4>Admin Panel eShoppingHub</h4>
+        </div>
+        <div class="col-md-1" align="center" style="padding-top:5px">
+            adminxyz
+        </div>
+        <div class="col-md-1"  align="center" style="padding-top:5px">
+            <a href="/">
+                Logout
+                <span class="glyphicon glyphicon-log-out"></span>
+            </a>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="col-md-2" style="background-color:lightblue">
+        <div class="row" style="padding-top:10px; font-size:16px">
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px">
+                <span class="glyphicon glyphicon-dashboard"></span>
+                    Dashboard
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="headerCategories">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/header_categories">Header Categories</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="subCategories">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/categories_subcategories">SubCategories</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/brands">Brands</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="users">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/users">Users</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="orderItems">
+                <a href="orderItems">Order/Sold Items</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="messages">
+                <a href="messages">Messages</a>
+            </div>
+            <div class="col-md-12" style="background-color:orange; padding-top:5px; padding-bottom:5px" id="sliderPics">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/slider_display_pics">Slider/PagesDisplay Pics</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="report">
+                Report
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Slider/PagesDisplay Pics</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <span style=" margin-bottom:10px;"><h3><b>Latest Page Slider Pics</b></h3></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10" style="margin-top:10px">
+                <table class="table table-bordered table-condensed" id="seller_messages_table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Picture</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @display = SliderSubcategoryDisplayPic.all %>
+                        <% hash = Hash.new %>
+                        <% @display.each{ |x| if x[:page_name] == 'Latest' then hash[x[:id]] = x[:pic] end } %>
+                        <% hash.each do |h| %>
+                        <tr>
+                            <td><%= h[0] %></td>
+                            <td><%= h[1] %></td>
+                            <td>
+                                <span>
+                                    <button class="btn btn-info" data-toggle="modal" data-target="#view_slider_pic">View</button>
+                                </span>
+                                <div id="view_slider_pic" class="modal fade">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button class="close" data-dismiss="modal">&times;</button>
+                                                <h3>Slider Image 1</h3>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img src="\Images/b2.jpg" class="img-responsive">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span>
+                                    <button class="btn btn-success" data-toggle="modal" data-target="#change_slider_pic">Change</button>
+                                </span>
+                                <div id="change_slider_pic" class="modal fade">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button class="close" data-dismiss="modal">&times;</button>
+                                                <h3>Change Slider Image 1</h3>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                       <input type="file" accept="image/*">
+                                                    </div>
+                                                    <div class="btn btn-primary">Update
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <% @display = SliderSubcategoryDisplayPic.all %>
+         <% @display.each do |heading| %>
+            <% if heading[:page_name] != "Latest" %>
+                <div class="row">
+                    <div class="col-md-12">
+                        <span style="margin-bottom:10px;">
+                            <h3>
+                                <b><%= heading[:page_name] %> Page Display Pic</b>
+                            </h3>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10" style="margin-top:10px">
+                        <table class="table table-bordered table-condensed" id="seller_messages_table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Picture</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                        <td><%= heading[:id] %></td>
+                                        <td><%= heading[:pic] %></td>
+                                        <td>
+                                            <a href="">
+                                                <button class="btn btn-info">View</button>
+                                            </a>
+                                            <a href="">
+                                                <button class="btn btn-success">Change</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</section>

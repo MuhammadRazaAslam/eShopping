@@ -1,0 +1,397 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+
+body{
+	font-family: lora;
+	background-color: #F0F0F0;
+}
+/*  header   */
+#header_main_div{ 
+     background-color:#F0F0F0 ;	
+	 box-shadow:2px 2px #E8E8E8 ;
+	 margin-bottom:2px;
+}
+.link_black{
+	color:black;
+}
+.link_black:hover{
+	color:#337ab7;
+	cursor:pointer;
+}
+.navigation_menu:hover{
+	background-color:orange; 
+}
+/* Latest page   */
+.slider_svg_width_height{
+	width:180px;
+	height:180px;
+}
+.slider_white_circle{
+	cx:10;
+	cy:10;
+	r:7;
+	stroke:black;
+	stroke-width:2;
+	fill:white;
+}
+.slider_black_circle{
+	r:7;
+	stroke:black;
+	stroke-width:2;
+	cx:10;
+	cy:10;
+	fill:black;
+}
+.main_heading{
+	color:black;
+}
+.main_heading:hover{
+	color:light;
+}
+.subheading_menu_box_shadow{
+   box-shadow:2px 2px 2px 2px lightgrey;
+}
+.product_box_shadow{
+	 box-shadow:2px 2px 2px lightgrey;
+	 margin-bottom:2px;
+}
+.product_main_pic_div{
+	 padding:0px;
+     margin:0px;
+	 border:1px solid lightgrey;
+}
+.product_main_pic{
+	width:100%;
+	height:300px;
+	padding:0px; 
+	margin:0px;
+}
+.product_secondary_pics_div{
+	padding-left:0px;
+}
+.product_secondary_pic_1_2_3{
+	padding:0px; 
+	border:1px solid lightgrey;
+}
+.pagination-pages:hover{
+	background-color: #008CBA;
+}
+.left-arrow{
+	font-size:30px;
+	color:darkgrey; 
+	float:left; 
+	margin-top:-25%; 
+	margin-right:0px;
+	cursor:pointer;
+    margin-left:15px; 
+    background-color:lightgrey;
+}
+.left-arrow:hover{
+	background-color:darkgrey;
+	color:blue;
+}
+.right-arrow{
+    font-size:30px; 
+    color:darkgrey; 
+    float:right; 
+    margin-top:-25%; 
+    cursor:pointer; 
+    margin-right:15px; 
+    background-color:lightgrey;
+}
+.right-arrow:hover{
+	background-color:darkgrey;
+	color:blue;
+}
+#homeliving-main-div{
+box-shadow: 2px 2px 2px 2px lightgrey;
+}
+
+.left-glyphicon-arrow-div{
+    float:left;
+    width:30px;
+    height:30px;
+    background-color:lightgrey;
+    position:relative;
+    margin-top:-230px;
+    margin-left:-15px; 
+ /*   margin-top:-20%;
+    margin-left:-1.2%;
+*/	cursor: pointer;
+}
+.left-glyphicon-arrow-div:hover{
+background-color:darkgrey;
+}
+#glyphicon-home-right-arrow{
+font-size: 200%;
+padding:0%;
+}
+#glyphicon-home-left-arrow{
+font-size: 200%;
+padding:0%;	
+}
+#glyphicon-home-left-arrow:hover{
+	color: skyblue;
+}
+#glyphicon-home-right-arrow:hover{
+color: skyblue;
+cursor: pointer;
+}
+
+/*electronics*/
+#glyphicon-home-right-arrow-e{
+font-size: 200%;
+padding:0%;
+}
+#glyphicon-home-left-arrow-e{
+font-size: 200%;
+padding:0%;	
+}
+#glyphicon-home-left-arrow-e:hover{
+	color: black;
+}
+#glyphicon-home-right-arrow-e:hover{
+color: black;
+cursor: pointer;
+}
+
+/*Clothing*/
+#glyphicon-home-right-arrow-c{
+font-size: 200%;
+padding:0%;
+}
+#glyphicon-home-left-arrow-c{
+font-size: 200%;
+padding:0%;	
+}
+#glyphicon-home-left-arrow-c:hover{
+	color: orange;
+}
+#glyphicon-home-right-arrow-c:hover{
+color: orange;
+}
+
+.right-glyphicon-arrow-div{
+    float:right;
+    width:30px;
+    height:30px;
+    background-color:lightgrey;
+    position:relative; 
+    margin-top:-20%;
+	margin-right:-1.3%;
+	cursor: pointer;
+}
+.right-glyphicon-arrow-div:hover{
+background-color:darkgrey;
+}
+/* Home and Living Page */
+.kitchen-and-dining-left-arrow{
+    font-size:15px;
+    font-weight:bold;
+    background-color:orange; 
+    padding:5px; 
+    cursor:pointer;
+}
+.kitchen-and-dining-left-arrow:hover{
+    background-color:lightblue;
+}
+.kitchen-and-dining-right-arrow{
+	font-size:15px; 
+	font-weight:bold;
+    background-color:orange; 
+    padding:5px; 
+    cursor:pointer;
+}
+.kitchen-and-dining-right-arrow:hover{
+	background-color:lightblue;
+}
+.kitchen-and-dining-item-heading{
+	width:100%;
+    background-color:#057fb8; 
+    font-color:white; 
+    text-align:center; 
+    margin-top:-10px; 
+    padding-top:10px; 
+    padding-bottom:1px;
+}
+/* BATHING */
+.bathing-left-arrow{
+    font-size:15px;
+    font-weight:bold;
+    background-color:orange; 
+    padding:5px; 
+    cursor:pointer;
+}
+.bathing-left-arrow:hover{
+    background-color:lightblue;
+}
+.bathing-right-arrow{
+	font-size:15px; 
+	font-weight:bold;
+    background-color:orange; 
+    padding:5px; 
+    cursor:pointer;
+}
+.bathing-right-arrow:hover{
+	background-color:lightblue;
+}
+
+/* Home Decorators */
+.home-decorators-left-arrow{
+    font-size:15px;
+    font-weight:bold;
+    background-color:orange; 
+    padding:5px; 
+    cursor:pointer;
+}
+.home-decorators-left-arrow:hover{
+    background-color:lightblue;
+}
+.home-decorators-right-arrow{
+	font-size:15px; 
+	font-weight:bold;
+    background-color:orange; 
+    padding:5px; 
+    cursor:pointer;
+}
+.home-decorators-right-arrow:hover{
+	background-color:lightblue;
+}
+/*  Kitchen and Dining  */
+
+/*Detail Page*/
+.detail-page-left-arrow{
+    font-size:15px;
+    font-weight:bold;
+    background-color:orange; 
+    padding:5px; 
+    cursor:pointer;
+}
+.detail-page-left-arrow:hover{
+    background-color:lightblue;
+}
+.detail-page-right-arrow{
+	font-size:15px; 
+	font-weight:bold;
+    background-color:orange; 
+    padding:5px; 
+    cursor:pointer;
+}
+.detail-page-right-arrow:hover{
+	background-color:lightblue;
+}
+
+ /*  Sign In Sign Up Page  */
+
+#main-box{
+	font-family:sans-serif; 
+	border:1px solid lightgrey; 
+	background-color:white;
+	margin-bottom: 40px;
+}
+#sign-in{
+	 padding-top:20px;  
+	 cursor:pointer;
+}
+#sign-in-glyphicon-circle-arrow-right{
+     font-size:30px; 
+     color:lightgrey;
+}
+#sign-in-span-text{
+     position:relative; 
+     top:-5px; 
+     font-size:25px; 
+     color:grey;	
+}
+#registration{
+	  padding-top:20px; 
+	  background-color:rgb(214,214,214); 
+	  cursor:pointer;
+	  border-left:2px solid grey; 
+	  border-bottom:2px solid grey;
+}
+#registration-glyphicon-plus-sign{
+       font-size:30px; 
+       color:grey;
+}
+#registration-span-text{
+	   position:relative; 
+	   top:-5px;
+	   color:black; 
+	   font-size:25px;
+}
+#check-box{
+	   position:relative; 
+	   top:-3px; 
+	   vertical-align:bottom;
+}
+#check-box:hover{
+	   cursor: pointer;	
+}
+#sign-in-button{
+	   position:relative; 
+	   top:2px;
+}
+#below-sign-in-registration-row{
+	   margin-top:20px; 
+	   color:grey;
+
+}
+#forgot-password{
+	   margin-top:15px;
+	   font-size:20px;
+}
+#here-row{ 
+	   padding-bottom:10px;
+}
+/* Admin DashBoard */
+#headerCategories:hover{
+background-color: orange;
+}
+#subCategories:hover{
+background-color: orange;
+}
+#otherCategories:hover{
+background-color: orange;
+}
+#users:hover{
+background-color: orange;
+}
+#orderItems:hover{
+background-color: orange;
+}
+#soldItems:hover{
+background-color: orange;
+}
+#messages:hover{
+background-color: orange;
+}
+#sliderPics:hover{
+background-color: orange;
+}
+#report:hover{
+background-color: orange;
+}
+
+
+
+
+
+
+
+

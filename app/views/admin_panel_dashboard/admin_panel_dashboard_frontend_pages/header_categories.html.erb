@@ -1,0 +1,89 @@
+<%= session[:current_user_id] %>
+<header  class="container-fluid" style="background-color:white">
+    <div class="row">
+        <div class="col-md-3" style="font-size:20px; padding-top:5px; padding-bottom:5px;">
+            <h4>
+                <b>
+                    <a href="/">Back to Home Page</a>
+                </b>
+            </h4>
+        </div>
+        <div class="col-md-7" align="center">
+            <h4>Admin Panel eShoppingHub</h4>
+        </div>
+        <div class="col-md-1" align="center" style="padding-top:5px">
+            adminxyz
+        </div>
+        <div class="col-md-1"  align="center" style="padding-top:5px">
+            <a href="/">
+                Logout
+                <span class="glyphicon glyphicon-log-out"></span>
+            </a>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="col-md-2" style="background-color:lightblue">
+        <div class="row" style="padding-top:10px; font-size:16px">
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px">
+                <span class="glyphicon glyphicon-dashboard"></span>
+                    Dashboard
+            </div>
+            <div class="col-md-12" style="background-color:orange; padding-top:5px; padding-bottom:5px" id="headerCategories">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/header_categories">Header Categories</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="subCategories">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/categories_subcategories">SubCategories</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/brands">Brands</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="users">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/users">Users</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="orderItems">
+                <a href="orderItems">Order/Sold Items</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="messages">
+                <a href="messages">Messages</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="sliderPics">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/slider_display_pics">Slider/PagesDisplay Pics</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="report">
+                Report
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Header Categories</h2>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Category Id</th>
+                            <th>Category Name</th>
+                            <th>Total SubCategories</th>
+                            <th>Total Products</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @category.each do |cat| %>
+                        <% subcat_count = 0 %>
+                            <% (Subcategory.all).each{ |subcat| if subcat[:categories_id] == cat[:id] then subcat_count += 1 end }  %>
+                            <tr>
+                                <td><%= cat[:id] %></td>
+                                <td><%= cat[:category_name] %></td>
+                                <td><%= subcat_count %></td>
+                                <td></td>
+                            </tr>
+                        <% end %>
+                     </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>    

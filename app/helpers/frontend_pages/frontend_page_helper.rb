@@ -1,0 +1,2 @@
+module FrontendPages::FrontendPageHelper
+end

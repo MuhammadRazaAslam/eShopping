@@ -1,0 +1,473 @@
+<%= session[:current_user_id] %>
+
+<header  class="container-fluid" style="background-color:white">
+    <div class="row">
+        <div class="col-md-3" style="font-size:20px; padding-top:5px; padding-bottom:5px;">
+            <h4>
+                <strong>
+                    <a href="/">Back to Home Page</a>
+                </strong>
+            </h4>
+        </div>
+        <div class="col-md-5" align="center">
+            <h4>Admin Panel eShoppingHub</h4>
+        </div>
+        <div class="col-md-2" align="center">
+            <h5>
+                <strong>
+                    <a href="">Go To Store</a>
+                </strong>
+            </h5>
+        </div>
+        <div class="col-md-1" align="center" style="padding-top:5px">
+            adminxyz
+        </div>
+        <div class="col-md-1"  align="center" style="padding-top:5px">
+            <a href="/">
+                Logout
+                <span class="glyphicon glyphicon-log-out"></span>
+            </a>
+        </div>
+    </div>
+</header>
+<section>
+         <div class="col-md-2" style="background-color:lightblue">
+            <div class="row" style="padding-top:10px; font-size:16px">
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px">
+                    <span class="glyphicon glyphicon-dashboard"></span>
+                    Dashboard
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="headerCategories">
+                    <%= link_to "Add Product", seller_panel_dashboard_seller_panel_dashboard_frontend_pages_add_product_path %>
+                </div>
+                <div class="col-md-12" style="background-color:orange; padding-top:5px; padding-bottom:5px" id="subCategories">
+                    <%= link_to "View Products", seller_panel_dashboard_seller_panel_dashboard_frontend_pages_view_products_path %>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="otherCategories">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/order_products">Order Products</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="users">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/sold_products">Sold Products</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="orderItems">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/messages">Messages</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="orderItems">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/comments">Comments</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="soldItems">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/account_information">Account Information</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="report">
+                     Report
+                </div>
+            </div>
+      </div>
+       <div class="col-md-10">
+       <div class="row">
+            <div class="col-md-12">
+                <h2>View All Products</h2>
+            </div>
+       </div>
+       <form>
+       <div class="row">
+            <div class="form-group col-md-3">
+                <label>Select Category: </label>
+                <select class="form-control">
+                  <option>Select Category</option>
+                  <option>Home and Living</option>
+                  <option>Electronics</option>
+                  <option>Clothing</option>
+                  <option>Toys,Kids,Babies</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label>Select Sub Category: </label>
+                <select class="form-control">
+                  <option>Select Sub Category</option>
+                  <option>Kictchen and Dining</option>
+                  <option>Mens</option>
+                  <option>Womens</option>
+                  <option>Home Decorators</option>
+                </select>
+           </div>
+       </div>
+       </form>
+       <div class="row">
+            <div class="col-md-12" style="margin-top:10px">
+                 <table class="table table-bordered" id="order_pending_table">
+                       <thead>
+                          <tr>
+                              <th>Product Id</th>
+                              <th>Product Name</th>
+                              <th>Price</th>
+                              <th>Quantity</th>
+                              <th>Brand Name</th>
+                              <th>Category</th>
+                              <th>Sub Category</th>
+                              <th>Date</th>
+                              <th>Pic 1</th>
+                              <th>Pic 2</th>
+                              <th>Pic 3</th>
+                              <th>Pic 4</th>
+                              <th>Demo Video</th>
+                              <th>Action</th>
+                          </tr>
+                       </thead>
+                       <tbody>
+                        <% @product.each do |p| %>
+                          <% subcat = Subcategory.find(p[:subcategories_id]) %>
+                            <tr>
+                                <td><%= p[:id] %></td>
+                                <td><%= p[:product_name] %></td>
+                                <td><%= p[:product_price] %></td>
+                                <td><%= p[:quantity] %></td>
+                                <td>Brand Name</td>
+                                <td><%= subcat[:categories_id] %></td>
+                                <td><%= p[:subcategories_id] %></td>
+                                <td><%= p[:created_at] %></td>
+                                <td><%= p[:pic_1] %></td>
+                                <td><%= p[:pic_2] %></td>
+                                <td><%= p[:pic_3] %></td>
+                                <td><%= p[:pic_4] %></td>
+                                <td>
+                                   <button type="button" class="btn btn-primary" data-toggle="modal"
+                                   data-target="#mymodal">Watch</button>
+                                   <div id="mymodal" class="modal fade">
+                                       <div class="modal-dialog">
+                                          <div class="modal-content" style="background-color:black">
+                                               <div class="modal-header">
+                                                   <button class="close" data-dismiss="modal">&times;</button>
+                                                   <h3 class="modal-title" style="color:white">Watch Demo
+                                                   </h3>
+                                               </div>
+                                               <div class="modal-body">
+                                                    <video width="100%" controls>
+                                                         <source src="">
+                                                    </video>
+                                               </div>
+                                          </div>
+                                      </div>
+                                   </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary col-md-12" style="margin-bottom:5px" data-toggle="modal" data-target="#edit_seller_product">Edit</button>
+                                  <div id="edit_seller_product" class="modal fade">
+                                      <div class="modal-dialog">
+                                           <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button class="close" data-dismiss="modal">&times;</button>
+                                                    <h3>Edit Product Information</h3>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-group col-md-3">
+                                                            <label>Product Id: </label>
+                                                            <input type="text" placeholder="1" class="form-control" disabled>
+                                                        </div>
+                                                        <div class="form-group col-md-7" style="visibility:hidden">
+                                                            <label>Product Id: </label>
+                                                            <input type="text" placeholder="1" class="form-control" disabled>
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label>Product Name: </label>
+                                                            <input type="text" placeholder="5PCS Bath Accessory Set Resin Soap Dish Dispenser Tumbler Toothbrush Holder" class="form-control" required>
+                                                        </div>
+                                                        <div class="form-group col-md-5">
+                                                            <label>Select Category: </label>
+                                                            <select class="form-control">
+                                                              <option>Select Category</option>
+                                                              <option>Home and Living</option>
+                                                              <option class="active">Electronics</option>
+                                                              <option>Clothing</option>
+                                                              <option>Toys,Kids,Babies</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-5">
+                                                            <label>Select Sub Category: </label>
+                                                            <select class="form-control">
+                                                             <option>Select Sub Category</option>
+                                                             <option>Kictchen and Dining</option>
+                                                             <option class="active">Mens</option>
+                                                             <option>Womens</option>
+                                                             <option>Home Decorators</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-5">
+                                                            <label>Select Brand Name: </label>
+                                                            <select class="form-control">
+                                                              <option>Select Brand Name:</option>
+                                                              <option>Samsung</option>
+                                                              <option class="active">LG</option>
+                                                              <option>NOKIA</option>
+                                                              <option>QMOBILE</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-5">
+                                                            <label>Product Price: </label>
+                                                            <input type="text" placeholder="US $56" class="form-control" required>
+                                                        </div>
+                                                        <div class="form-group col-md-5">
+                                                            <label>Quantity: </label>
+                                                            <input type="number" min="1" max="200" value="34" class="form-control" required>
+                                                        </div>
+                                                        <div class="form-group col-md-5">
+                                                            <label>Item Condition: </label>
+                                                            <select class="form-control">
+                                                              <option>New</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-5">
+                                                            <label>Pic 1: </label>
+                                                            <input type="file" accept="image/*">
+                                                        </div>
+                                                        <div class="form-group col-md-5">
+                                                            <label>Pic 2: </label>
+                                                            <input type="file" accept="image/*">
+                                                        </div>
+                                                        <div class="form-group col-md-5">
+                                                            <label>Pic 3(Optional): </label>
+                                                            <input type="file" accept="image/*">
+                                                        </div>
+                                                        <div class="form-group col-md-5">
+                                                            <label>Pic 4(Optional): </label>
+                                                            <input type="file" accept="image/*">
+                                                        </div>
+                                                        <div class="form-group" style="margin-top:5px; margin-left:15px">
+                                                            <label>Upload Demo Video(Optional):</label>
+                                                            <input type="file" accept="video/*">
+                                                        </div>
+                                                        <div class="form-group" style="margin-left:15px">
+                                                            <button type="button" class="btn btn-primary">Update Product</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                              </div>
+                                           </div>
+                                      </div>
+                                 </div>
+                                  <%= link_to 'Delete', category_subcategory_product_path(1,2,p[:id]), method: :delete, :class => "btn btn-danger", data: {confirm: 'Are you sure?' } %>
+                                </td>
+                            </tr>
+                          <% end %>
+
+                          <tr>
+                             <td>1</td>
+                             <td>5PCS Bath Accessory Set Resin Soap Dish Dispenser Tumbler Toothbrush Holder</td>
+                             <td>US $56</td>
+                             <td>34</td>
+                             <td>SamSung</td>
+                             <td>DELL</td>
+                             <td>Electronics</td>
+                             <td>2-Feb-16</td>
+                             <td>
+                               <img src="" style="" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="" style="" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="" style="" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="" style="" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                                 <button type="button" class="btn btn-primary" data-toggle="modal"
+                                 data-target="#mymodal">Watch</button>
+                                 <div id="mymodal" class="modal fade">
+                                     <div class="modal-dialog">
+                                        <div class="modal-content" style="background-color:black">
+                                             <div class="modal-header">
+                                                 <button class="close" data-dismiss="modal">&times;</button>
+                                                 <h3 class="modal-title" style="color:white">Watch Demo
+                                                 </h3>
+                                             </div>
+                                             <div class="modal-body">
+                                                  <video width="100%" controls>
+                                                       <source src="">
+                                                  </video>
+                                             </div>
+                                        </div>
+                                    </div>
+                                 </div>
+                             </td>
+                             <td>
+                                <button type="button" class="btn btn-primary col-md-12" style="margin-bottom:5px" data-toggle="modal" data-target="#edit_seller_product">Edit</button>
+                                <div id="edit_seller_product" class="modal fade">
+                                    <div class="modal-dialog">
+                                         <div class="modal-content">
+                                              <div class="modal-header">
+                                                  <button class="close" data-dismiss="modal">&times;</button>
+                                                  <h3>Edit Product Information</h3>
+                                              </div>
+                                              <div class="modal-body">
+                                                  <form>
+                                                      <div class="form-group col-md-3">
+                                                          <label>Product Id: </label>
+                                                          <input type="text" placeholder="1" class="form-control" disabled>
+                                                      </div>
+                                                      <div class="form-group col-md-7" style="visibility:hidden">
+                                                          <label>Product Id: </label>
+                                                          <input type="text" placeholder="1" class="form-control" disabled>
+                                                      </div>
+                                                      <div class="form-group col-md-12">
+                                                          <label>Product Name: </label>
+                                                          <input type="text" placeholder="5PCS Bath Accessory Set Resin Soap Dish Dispenser Tumbler Toothbrush Holder" class="form-control" required>
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Select Category: </label>
+                                                          <select class="form-control">
+                                                            <option>Select Category</option>
+                                                            <option>Home and Living</option>
+                                                            <option class="active">Electronics</option>
+                                                            <option>Clothing</option>
+                                                            <option>Toys,Kids,Babies</option>
+                                                          </select>
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Select Sub Category: </label>
+                                                          <select class="form-control">
+                                                           <option>Select Sub Category</option>
+                                                           <option>Kictchen and Dining</option>
+                                                           <option class="active">Mens</option>
+                                                           <option>Womens</option>
+                                                           <option>Home Decorators</option>
+                                                          </select>
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Select Brand Name: </label>
+                                                          <select class="form-control">
+                                                            <option>Select Brand Name:</option>
+                                                            <option>Samsung</option>
+                                                            <option class="active">LG</option>
+                                                            <option>NOKIA</option>
+                                                            <option>QMOBILE</option>
+                                                          </select>
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Product Price: </label>
+                                                          <input type="text" placeholder="US $56" class="form-control" required>
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Quantity: </label>
+                                                          <input type="number" min="1" max="200" value="34" class="form-control" required>
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Item Condition: </label>
+                                                          <select class="form-control">
+                                                            <option>New</option>
+                                                          </select>
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Pic 1: </label>
+                                                          <input type="file" accept="image/*">
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Pic 2: </label>
+                                                          <input type="file" accept="image/*">
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Pic 3(Optional): </label>
+                                                          <input type="file" accept="image/*">
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Pic 4(Optional): </label>
+                                                          <input type="file" accept="image/*">
+                                                      </div>
+                                                      <div class="form-group" style="margin-top:5px; margin-left:15px">
+                                                          <label>Upload Demo Video(Optional):</label>
+                                                          <input type="file" accept="video/*">
+                                                      </div>
+                                                      <div class="form-group" style="margin-left:15px">
+                                                          <button type="button" class="btn btn-primary">Update Product</button>
+                                                      </div>
+                                                  </form>
+                                              </div>
+                                            </div>
+                                         </div>
+                                    </div>
+                               </div>
+                                <button type="button" class="btn btn-primary col-md-12 ">Delete</button>
+                             </td>
+                          </tr>
+                       </tbody>
+                 </table>
+                 <table class="table table-bordered" id="order_completed_table" style="display:none">
+                 <thead>
+                          <tr>
+                              <th>Order No</th>
+                              <th>Seller Name</th>
+                              <th>Store Name</th>
+                              <th>Buyer Name</th>
+                              <th>Product Id</th>
+                              <th>Product Name</th>
+                              <th>Product Pic</th>
+                              <th>Quantity</th>
+                              <th>Price</th>
+                              <th>Status</th>
+                              <th>Date</th>
+                              <th>Action</th>
+                          </tr>
+                       </thead>
+                       <tbody>
+                          <tr>
+                             <td>54</td>
+                             <td>Raza</td>
+                             <td>Electronic Store</td>
+                             <td>Mehmood Ashfaq</td>
+                             <td>121</td>
+                             <td>LCD</td>
+                             <td>pic</td>
+                             <td>1</td>
+                             <td>$23</td>
+                             <td>Product Delivered</td>
+                             <td>5-July-16</td>
+                             <td>
+                               <a href="">
+                                 <span class="glyphicon glyphicon-trash"></span>
+                               </a>
+                             </td>
+                          </tr>
+                          <tr>
+                             <td>13</td>
+                             <td>Raza</td>
+                             <td>Electronic Store</td>
+                             <td>Mehmood Ashfaq</td>
+                             <td>121</td>
+                             <td>Dell i5 Laptop</td>
+                             <td>pic</td>
+                             <td>1</td>
+                             <td>$23</td>
+                             <td>Product Delivered</td>
+                             <td>12-June-16</td>
+                             <td>
+                               <a href="">
+                                 <span class="glyphicon glyphicon-trash"></span>
+                               </a>
+                             </td>
+                          </tr>
+                          <tr>
+                             <td>3</td>
+                             <td>Raza</td>
+                             <td>Electronic Store</td>
+                             <td>Mehmood Ashfaq</td>
+                             <td>121</td>
+                             <td>Refrigerator</td>
+                             <td>pic</td>
+                             <td>1</td>
+                             <td>$23</td>
+                             <td>Product Delivered</td>
+                             <td>12-Oct-16</td>
+                             <td>
+                               <a href="">
+                                 <span class="glyphicon glyphicon-trash"></span>
+                               </a>
+                             </td>
+                          </tr>
+                       </tbody>
+                 </table>
+            </div>
+       </div>
+  </div>
+</section>

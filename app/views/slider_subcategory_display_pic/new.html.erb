@@ -1,0 +1,19 @@
+<%= form_for :display_pics, url: save_slider_subcategory_display_pic_path(1), method: :get do |s| %>
+    <div class="col-md-8" style="background-color:">
+        <div class="col-md-8">
+            <div class="form-group">
+            <strong><%= s.label "Pic" %></strong>
+            <%= s.file_field :pic %>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+            <strong><%= s.label "Page_Name" %></strong>
+            <%= s.text_field :page_name, :class => "form-control" %>
+            </div>
+        </div>
+        <%= s.submit "Submit" %>
+<% end %>
+<% @d= SliderSubcategoryDisplayPic.all %><br><br>
+<%= @d.count %>
+<%= link_to "Index", slider_subcategory_display_pic_index_path %>

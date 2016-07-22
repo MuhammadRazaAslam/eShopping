@@ -1,0 +1,15 @@
+
+<%= link_to :Back, new_category_path %>
+<h1> List of Categories </h1>
+
+<% @category.each do |cat| %>
+	<%= "Category Id : " %>
+	<%= cat[:id] %>
+	<%= "Category Name : " %>
+	<%= cat[:category_name] %>
+	<%= link_to :Edit, edit_category_path(cat) %>
+	<br><br>
+<% end %>
+
+
+	

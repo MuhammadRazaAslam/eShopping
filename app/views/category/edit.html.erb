@@ -1,0 +1,11 @@
+<h1>Edit</h1>
+<%= form_for :cat, url: category_path(@category), method: :patch do |f| %>
+	<%= "Enter Category Id : " %>
+	<%= @category.id %>
+	<%= "Enter Category Name : " %>
+	<br>
+	<%= f.text_field :category_name, :value => @category[:category_name] %>
+	<%= f.submit :Update %>
+<% end %>
+<br>
+<%= link_to :List, category_index_path %>

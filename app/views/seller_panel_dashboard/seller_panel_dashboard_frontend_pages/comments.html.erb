@@ -1,0 +1,142 @@
+<%= session[:current_user_id] %>
+
+<header  class="container-fluid" style="background-color:white">
+    <div class="row">
+        <div class="col-md-3" style="font-size:20px; padding-top:5px; padding-bottom:5px;">
+            <h4>
+                <strong>
+                    <a href="/">Back to Home Page</a>
+                </strong>
+            </h4>
+        </div>
+        <div class="col-md-5" align="center">
+            <h4>Admin Panel eShoppingHub</h4>
+        </div>
+        <div class="col-md-2" align="center">
+            <h5>
+                <strong>
+                    <a href="">Go To Store</a>
+                </strong>
+            </h5>
+        </div>
+        <div class="col-md-1" align="center" style="padding-top:5px">
+            adminxyz
+        </div>
+        <div class="col-md-1"  align="center" style="padding-top:5px">
+            <a href="/">
+                Logout
+                <span class="glyphicon glyphicon-log-out"></span>
+            </a>
+        </div>
+    </div>
+</header>
+<section>
+         <div class="col-md-2" style="background-color:lightblue">
+            <div class="row" style="padding-top:10px; font-size:16px">
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px">
+                    <span class="glyphicon glyphicon-dashboard"></span>
+                    Dashboard
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="headerCategories">
+                    <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/add_product">Add Product</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="subCategories">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/view_products">View Produts</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="otherCategories">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/order_products">Order Products</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="users">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/sold_products">Sold Products</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="orderItems">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/messages">Messages</a>
+                </div>
+                <div class="col-md-12" style="background-color:orange; padding-top:5px; padding-bottom:5px" id="orderItems">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/comments">Comments</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="soldItems">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/account_information">Account Information</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="report">
+                     Report
+                </div>
+            </div>
+      </div>
+            <div class="col-md-10">
+                 <h1>All Comments</h1>
+                    <button type="button" class="btn btn-danger" style="margin-bottom:20px">Clear All Comments</button>
+                     <table class="table table-bordered">
+                           <thead>
+                                 <tr>
+                                     <th>Sr#</th>
+                                     <th>Comment Id</th>
+                                     <th>Comment Description</th>
+                                     <th>Product Id</th>
+                                     <th>Product Name</th>
+                                     <th>Buyer Name</th>
+                                     <th>Email</th>
+                                     <th>Category</th>
+                                     <th>Sub Category</th>
+                                     <th>Rank</th>
+                                     <th>Date</th>
+                                     <th>Action</th>
+                                 </tr>
+                           </thead>
+                           <tbody>
+                                 <tr>
+                                    <td>1</td>
+                                    <td>5</td>
+                                    <td>Visio 2016 makes it easier than ever to create and share professional, 
+                                    versatile diagrams that simplify and communicate complex information. Visio has thousands of shapes that meet industry standards (BPMN 2.0, IEEE, UML 2.4).  Whether you want to quickly capture a flowchart that you brainstormed on a whiteboard, map an IT network, build an organizational chart, document a business process, or draw a floor plan</td>
+                                    <td>3</td>
+                                    <td>Laptop i5 Dell</td>
+                                    <td>Raza Aslam</td>
+                                    <td>raza.aslam@gmail.com</td>
+                                    <td>Electronics</td>
+                                    <td>Laptop</td>
+                                    <td>5 Star</td>
+                                    <td>23-Aug-16</td>
+                                    <td>
+                                        <button style="margin-top:5px" type="button" class="btn btn-danger">Delete</button>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>1</td>
+                                    <td>5</td>
+                                    <td>Visio 2016 makes it easier than ever to create and share professional, 
+                                    versatile diagrams that simplify and communicate complex information. Visio has thousands of shapes that meet industry standards (BPMN 2.0, IEEE, UML 2.4).  Whether you want to quickly capture a flowchart that you brainstormed on a whiteboard, map an IT network, build an organizational chart, document a business process, or draw a floor plan</td>
+                                    <td>3</td>
+                                    <td>Laptop i5 Dell</td>
+                                    <td>Raza Aslam</td>
+                                    <td>raza.aslam@gmail.com</td>
+                                    <td>Electronics</td>
+                                    <td>Laptop</td>
+                                    <td>5 Star</td>
+                                    <td>23-Aug-16</td>
+                                    <td>
+                                        <button style="margin-top:5px" type="button" class="btn btn-danger">Delete</button>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>1</td>
+                                    <td>5</td>
+                                    <td>Visio 2016 makes it easier than ever to create and share professional, 
+                                    versatile diagrams that simplify and communicate complex information. Visio has thousands of shapes that meet industry standards (BPMN 2.0, IEEE, UML 2.4).  Whether you want to quickly capture a flowchart that you brainstormed on a whiteboard, map an IT network, build an organizational chart, document a business process, or draw a floor plan</td>
+                                    <td>3</td>
+                                    <td>Laptop i5 Dell</td>
+                                    <td>Raza Aslam</td>
+                                    <td>raza.aslam@gmail.com</td>
+                                    <td>Electronics</td>
+                                    <td>Laptop</td>
+                                    <td>5 Star</td>
+                                    <td>23-Aug-16</td>
+                                    <td>
+                                        <button style="margin-top:5px" type="button" class="btn btn-danger">Delete</button>
+                                    </td>
+                                 </tr>
+                                 </tbody>
+                     </table>
+            </div>
+        </div>
+    </section>

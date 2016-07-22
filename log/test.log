@@ -1,0 +1,27 @@
+  [1m[36m (137.6ms)[0m  [1mCREATE TABLE "admins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (155.8ms)[0m  CREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "brand_name" varchar, "categories_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (127.9ms)[0m  CREATE  INDEX "index_brands_on_categories_id" ON "brands" ("categories_id")
+  [1m[36m (132.4ms)[0m  [1mCREATE TABLE "buyers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password" varchar, "phone_no" varchar, "address" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (143.6ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "category_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (143.5ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_name" text, "product_price" integer, "quantity" integer, "item_condition" varchar, "pic_1" varchar, "pic_2" varchar, "pic_3" varchar, "pic_4" varchar, "demo_video" varchar, "subcategories_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (143.6ms)[0m  CREATE  INDEX "index_products_on_subcategories_id" ON "products" ("subcategories_id")
+  [1m[36m (144.0ms)[0m  [1mCREATE TABLE "sellers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "store_name" varchar, "email" varchar, "password" varchar, "first_name" varchar, "last_name" varchar, "country" varchar, "province" varchar, "city" varchar, "phone_no" varchar, "address_1" text, "address_2" text, "logo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (144.1ms)[0m  CREATE TABLE "slider_subcategory_display_pics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pic" varchar, "page_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (132.8ms)[0m  [1mCREATE TABLE "subcategories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "subcategory_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "categories_id" integer) [0m
+  [1m[35m (132.8ms)[0m  CREATE  INDEX "index_subcategories_on_categories_id" ON "subcategories" ("categories_id")
+  [1m[36m (132.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (136.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (132.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (116.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160711214233')[0m
+  [1m[35m (122.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160708154047')
+  [1m[36m (110.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160704184924')[0m
+  [1m[35m (77.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160708103340')
+  [1m[36m (110.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160709233633')[0m
+  [1m[35m (121.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160708152550')
+  [1m[36m (121.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160705113926')[0m
+  [1m[35m (121.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160708152253')
+  [1m[36m (121.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160710112032')[0m
+  [1m[35m (144.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160705053558')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m

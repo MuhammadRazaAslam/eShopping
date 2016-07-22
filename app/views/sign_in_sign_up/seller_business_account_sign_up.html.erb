@@ -1,0 +1,125 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" style=" margin-top:20px" align="center">
+            <img src="\logo1.png" class="img-responsive" alt="Not Uploaded" style="background-color:yellow; opacity:1">
+        </div>
+        <div class="col-md-10 col-md-offset-1" id="main-box">
+            <div class="row" style="padding-bottom:50px">
+                <div class="'col-md-12" style="padding:30px; font-weight:bold">
+                    <h2>Create a Business Account</h2>
+                </div>
+                <!-- <form id="contactForm"> -->
+                <%= form_for :seller_sign_up, url: new_seller_path, :id => "contactForm", method: :get do |f_sign_up| %>
+                    <div class="col-md-8" style="background-color:">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                            <strong><%= f_sign_up.label "Store Name" %></strong>
+                            <%= f_sign_up.text_field :store_name, :class => "form-control" %>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                            <strong><%= f_sign_up.label "Email" %></strong>
+                            <%= f_sign_up.email_field :email, :class => "form-control" %>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                            <strong><%= f_sign_up.label "Password" %></strong>
+                            <%= f_sign_up.password_field :password, :class => "form-control" %>
+                            </div>
+                        </div>
+                        <div class="col-md-8" style="margin-right:5px">
+                            <div class="form-group">
+                               <strong><%= f_sign_up.label "Confirm Password" %></strong>
+                            <%= password_field :confirm_password, :class => "form-control" %></div>
+                        </div>
+                        <div class="col-md-4" > 
+                            <div class="form-group">
+                           <strong><%= f_sign_up.label "First Name" %></strong>
+                            <%= f_sign_up.text_field :first_name, :class => "form-control" %>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="margin-right:5px">
+                            <div class="form-group">
+                               <strong><%= f_sign_up.label "Last Name" %></strong>
+                            <%= f_sign_up.text_field :last_name, :class => "form-control" %>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <%= f_sign_up.label "Country" %>
+                                <%= f_sign_up.select(:country, options_for_select([
+                                    ['Select Country'],
+                                    ['Pakistan'],
+                                    ['UAE'],
+                                    ['Canada']]), :class => 'col-md-12 form-control')  %>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <%= f_sign_up.label "Province" %>
+                                <%= f_sign_up.select(:province, options_for_select([
+                                    ['Select Province'],
+                                    ['Punjab'],
+                                    ['Sindth'],
+                                    ['KPK']]), :class => 'col-md-12 form-control') %>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <%= f_sign_up.label "City" %>
+                                <%= f_sign_up.select(:city, options_for_select([
+                                    ['Select City'],
+                                    ['Lahore'],
+                                    ['Karachi'],
+                                    ['Multan']]), :class => 'col-md-12 form-control') %>
+                            </div>
+                        </div><!--     
+                        <form id="contactForm" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-xs-3 control-label">Phone number</label>
+                                <div class="col-xs-5">
+                                    <input type="tel" class="form-control" name="phoneNumber" />
+                                </div>
+                            </div>
+                        </form> -->  
+                        <div class="col-md-4" style="margin-right:5px;">
+                            <div class="form-group">
+                                <%= f_sign_up.label "Phone No" %>
+                                <%= f_sign_up.phone_field :phone_no, :class => "form-control", :placeholder => "Phone No" %>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <%= f_sign_up.label "Address 1" %>
+                                <%= f_sign_up.text_field :address_1, :class => "form-control", :placeholder => "Address 1" %>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <%= f_sign_up.label "Address 2(Optional)" %>
+                                <%= f_sign_up.text_field :address_2, :class => "form-control", :placeholder => "Address 2" %>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <%= f_sign_up.label "Upload Logo" %>
+                                <%= f_sign_up.file_field :logo, :accept => "image/*" %>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="checkbox" id="check-box"> I read and accept the all terms and conditions.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <%= f_sign_up.submit "Create Account", :class => "btn btn-primary" %>
+                        </div>
+                    </div>
+                <% end %>
+              <!--   </form>
+             --></div>
+        </div>
+    </div>
+</div>

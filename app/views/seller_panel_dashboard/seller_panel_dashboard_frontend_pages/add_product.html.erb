@@ -1,0 +1,160 @@
+<%= session[:current_user_id] %>
+
+<header  class="container-fluid" style="background-color:white">
+    <div class="row">
+        <div class="col-md-3" style="font-size:20px; padding-top:5px; padding-bottom:5px;">
+            <h4>
+                <strong>
+                    <a href="/">Back to Home Page</a>
+                </strong>
+            </h4>
+        </div>
+        <div class="col-md-5" align="center">
+            <h4>Admin Panel eShoppingHub</h4>
+        </div>
+        <div class="col-md-2" align="center">
+            <h5>
+                <strong>
+                    <a href="">Go To Store</a>
+                </strong>
+            </h5>
+        </div>
+        <div class="col-md-1" align="center" style="padding-top:5px">
+            adminxyz
+        </div>
+        <div class="col-md-1"  align="center" style="padding-top:5px">
+            <a href="/">
+                Logout
+                <span class="glyphicon glyphicon-log-out"></span>
+            </a>
+        </div>
+    </div>
+</header>
+<section>
+          <div class="col-md-2" style="background-color:lightblue">
+            <div class="row" style="padding-top:10px; font-size:16px">
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px">
+                    <span class="glyphicon glyphicon-dashboard"></span>
+                    Dashboard
+                </div>
+                <div class="col-md-12" style="background-color:orange; padding-top:5px; padding-bottom:5px" id="headerCategories">
+                    <%= link_to "Add Product", seller_panel_dashboard_seller_panel_dashboard_frontend_pages_add_product_path %>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="subCategories">
+                    <%= link_to "View Products", seller_panel_dashboard_seller_panel_dashboard_frontend_pages_view_products_path %>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="otherCategories">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/order_products">Order Products</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="users">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/sold_products">Sold Products</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="orderItems">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/messages">Messages</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="orderItems">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/comments">Comments</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="soldItems">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/account_information">Account Information</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="report">
+                     Report
+                </div>
+            </div>
+        </div>
+
+       <%= render 'product/form' %>
+        <!-- <div class="col-md-10" style="padding:40px; background-color:skygrey">
+             <div class="row">
+                  <div class="col-md-12">
+                  <h2>Add New Product</h2>
+                  </div>
+                  <div class="col-md-6" style="margin-top:30px">
+                      <form>
+                           <div class="form-group col-md-6">
+                               <label>Category: </label>
+                               <select class="form-control">
+                                   <option>Select Category</option>
+                                   <option>Home and Living</option>
+                                   <option>Electronics</option>
+                                   <option>Clothing</option>
+                                   <option>Toys,Kids,Babies</option>
+                               </select>
+                           </div>
+                           <div class="form-group col-md-6">
+                               <label>Sub Category: </label>
+                               <select class="form-control">
+                                   <option>Select Sub Category</option>
+                                   <option>Kictchen and Dining</option>
+                                   <option>Mens</option>
+                                   <option>Womens</option>
+                                   <option>Home Decorators</option>
+                               </select>
+                           </div>
+                          <div class="form-group col-md-12">
+                              <label>Brand Name: </label>
+                              <select class="form-control">
+                                <option>Select Brand Name:</option>
+                                <option>Samsung</option>
+                                <option class="active">LG</option>
+                                <option>NOKIA</option>
+                                <option>QMOBILE</option>
+                              </select>
+                          </div>
+                           <div class="form-group col-md-12">
+                               <label>Product Name: </label>
+                               <input type="text" placeholder="Product Name" class="form-control" required>
+                           </div>
+                           <div class="form-group col-md-4">
+                               <label>Product Price: </label>
+                               <input type="text" placeholder="Price" class="form-control" required>
+                           </div>
+
+                           <div class="form-group col-md-4">
+                               <label>Quantity: </label>
+                               <input type="number" min="1" max="200" class="form-control" required>
+                           </div>
+                           
+                           <div class="form-group col-md-4">
+                               <label>Item Condition: </label>
+                               <select class="form-control">
+                                   <option>New</option>
+                               </select>
+                           </div>
+                           <div class="form-group col-md-6">
+                                <label>Pic 1: </label>
+                                <input type="file" accept="image/*">
+                           </div>
+                           <div class="form-group col-md-6">
+                                <label>Pic 2: </label>
+                                <input type="file" accept="image/*">
+                           </div>
+                           <div class="form-group col-md-6">
+                                <label>Pic 3(Optional): </label>
+                                <input type="file" accept="image/*">
+                           </div>
+                           <div class="form-group col-md-6">
+                                <label>Pic 4(Optional): </label>
+                                <input type="file" accept="image/*">
+                           </div>
+                           <div class="form-group col-md-12">
+                                <label>Upload Demo Video(Optional): </label>
+                                <input type="file" accept="video/*">
+                           </div>
+                           <div class="col-md-2">
+                                 <button type="button" class="btn btn-primary">Add Product</button>
+                           </div>
+                      </form>
+                  </div>
+              </div>
+        </div>
+    </div> -->
+</section>
+<footer>
+    <div class="row">
+        <div class="col-md-12" style="text-align:center; padding-top:80px; margin-bottom:40px">
+             <p>Copyright &copy eShoppingHub Inc. All rights reserved.</p>
+        </div> 
+   </div>
+</footer>

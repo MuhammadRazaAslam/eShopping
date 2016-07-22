@@ -1,0 +1,11 @@
+<h1>Edit</h1>
+<%= form_for :cat, url: admin_panel_dashboard_category_update_path(@category.id) do |f| %>
+	<%= "Enter Category Id : " %>
+	<%= @category.id %>
+	<%= "Enter Category Name : " %>
+	<br>
+	<%= f.text_field :category_name, :value => @category[:category_name] %>
+	<%= f.submit :Update %>
+<% end %>
+<br>
+<%= link_to :List, admin_panel_dashboard_category_index_path %>

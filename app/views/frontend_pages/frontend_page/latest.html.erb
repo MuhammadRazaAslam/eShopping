@@ -1,0 +1,392 @@
+<%= render 'layouts/header' %>
+<div style="background-color:; padding:1px">	 
+  <section class="container">
+    <div class="row"  style="margin-top:20px">
+        <div class="col-md-12 col-sm-12 col-xs-12" id="raza">
+            <div class="row" id="img_slider_pic_height">
+                <img class="img-rounded img-responsive col-md-12" src="images/slide_1.jpg" id="img_slider_latest">
+    	        <span class="left-arrow glyphicon glyphicon-menu-left">
+                </span>
+    	        <span class="right-arrow glyphicon glyphicon-menu-right">
+                </span> 
+    	    </div>
+		    <!--  <div class="row">
+			         <div class="col-md-2 col-sm-4">
+			                <span class="left-arrow glyphicon glyphicon-menu-left" style="font-size:30px; color:orange; float:left; margin-top:-180%; margin-right:75px;cursor:pointer;
+			                ">
+                            </span>
+			         </div>
+			         <div class="col-md-2 col-md-offset-8 col-sm-4 col-sm-offset-4">
+			                <span class="right-arrow glyphicon glyphicon-menu-right" style="font-size:30px; color:orange; float:right; margin-top:-180%; cursor:pointer;
+			                ">
+                            </span>
+			         </div>
+			    </div>
+			      --><!--  <div class="row">
+			        <div class="col-md-1 left-glyphicon-arrow-div">
+			             <a href="">
+                         <span class="glyphicon glyphicon-menu-left" style="font-size:40px;  color:orange; position:relative; "></span>
+                         </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 right-glyphicon-arrow-div">
+                          <a href="#">
+                          <span class="glyphicon glyphicon-menu-right" style="font-size:40px;  color:orange; position:relative"></span>
+                          </a>
+                    </div>
+                </div>  -->
+		    <div class="row" align="center" style="margin-top:20px;">           
+	            <svg width="30px" height="30px">
+	                <circle r="7" cy="10" cx="10" stroke="black" stroke-width="2" fill="black" id="circle_1"></circle>
+	            </svg>
+	            <svg width="30px" height="30px">
+	                <circle r="7" cy="10" cx="10" stroke="black" stroke-width="2" fill="white" id="circle_2"></circle>
+	            </svg>
+	            <svg width="30px" height="30px">
+	                <circle r="7" cy="10" cx="10" stroke="black" stroke-width="2" fill="white" id="circle_3"></circle>
+	            </svg>
+	            <svg width="30px" height="30px">
+	                <circle r="7" cy="10" cx="10" stroke="black" stroke-width="2" fill="white" id="circle_4"></circle>
+	            </svg>
+	            <svg width="30px" height="30px">
+	                <circle r="7" cy="10" cx="10" stroke="black" stroke-width="2" fill="white" id="circle_5"></circle>
+	            </svg>
+            </div>
+	    </div><!-- 
+	        <div class="col-md-4 col-sm-4 hidden-xs">
+	                <img class="img-responsive" src="images/slide_2.jpg">
+	                <img class="img-responsive" src="images/slide_3.jpg">
+	        </div>  -->
+	</div>
+    <div class="container">
+        <h1><b>Latest</b></h1>
+    </div>
+    <%# cat_head_backcolor = Array['skyblue', 'green', 'silver','#6A8198','orange', 'yellow', 'blue'] %>
+	    <%# b_color_index = 0 %>
+	    <%# categories = Category.all %>
+	    <%# categories.each do |category| %>
+	   	    <%# products = Product.find_by_sql("SELECT p.id, p.product_name, p.product_price, p.quantity,p.pic_1 FROM products as p INNER JOIN 
+	   		subcategories as s on p.subcategories_id = s.id INNER JOIN categories as c on s.categories_id = c.id") %>
+	   		    <%# b_color_index += 1 %>
+    <div class="row" style="background-color: skyblue;  margin-top:15px">
+        <div class="col-md-12">
+            <h2>
+                <a href="/home_and_living" class="main_heading">
+                    <b>Home and Living<%#= category[:category_name] %></b>
+                </a>
+            </h2>
+        </div>
+    </div>
+    <% i=0 %>
+	<% prods=[] %>
+    <% (Product.all).each do |product| %>
+		<% subcat = Subcategory.find(product[:subcategories_id]) %>
+		<% if subcat %>
+			<% if subcat[:categories_id] == 1 %>
+			    <% prods[i]=product %>
+                <% i += 1 %>
+		    <% end %>
+	    <% end %>
+	<% end %>
+	<%= lengthOfArray = prods.length %>
+    <% prods %>
+    <div class="row" style="background-color:white; margin-top:5px">
+        <% curr = 0 %> 
+        <% (0...2).each do |i| %>
+            <span id="prod_id_<%= curr %>"><%= prods[curr].id %></span>
+            <div class="col-md-3 col-sm-3 col-xs-6" style="border:1px solid lightgrey;">
+                <img src="/images/<%= prods[curr].pic_1 %>" class="img-rounded img-responsive home-living-slider-length-pic-<%= i+1 %>" id="home-living-slider-pic" 
+                   style="height:240px" width="100%"; alt="<%= lengthOfArray %>">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4><a href="new_detail_page" id="prod_name"><%= prods[curr].product_name %></a></h4>
+                    </div>
+                    <div class="col-md-8 col-sm-7 hidden-xs">
+                        <b>Price:</b> US $<span id="prod_price"><%= prods[curr].product_price %></span>
+                    </div>
+                    <div class="col-md-4 col-sm-5 hidden-xs">
+                        <b>Items: </b><span id="prod_quantity"><%= prods[curr].quantity %></span>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4>
+                            <b><a href="new_detail_page">Shop Now</a></b>
+                        </h4>
+                    </div>
+                </div>
+           </div>
+            <% curr = curr + 1 %>
+        <% end %> 
+        <% (2...4).each do |i| %>
+            <%= curr += 1 %>
+            <span id="prod_id_<%= curr %>"><%= prods[curr].id %></span>
+            <div class="col-md-3 col-sm-3 hidden-xs" style="border:1px solid lightgrey;">
+                <img src="/images/<%= prods[curr].pic_1 %>" class="img-rounded img-responsive home-living-slider-length-pic-<%= i+1 %>" id="home-living-slider-pic" 
+                   style="height:240px" width="100%"; alt="<%= lengthOfArray %>">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 hidden-xs">
+                        <h4>
+                            <a href="new_detail_page"><%= prods[curr].product_name %></a>
+                        </h4>
+                    </div>
+                    <div class="col-md-8 col-sm-7 hidden-xs">
+                        <span><b>Price:</b> US $<%= prods[curr].product_price %></span>
+                    </div>
+                    <div class="col-md-4 col-sm-5 hidden-xs">
+                        <span><b>Items: </b><%= prods[curr].quantity %></span>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4><b><a href="new_detail_page">Shop Now</a></b></h4>
+                    </div>
+                </div>
+            </div> 
+        <% end %>
+        <script type="text/javascript">var curr1="<%= curr %>"</script>
+    </div>
+    <div class="left-glyphicon-arrow-div"  id="glyphicon-home-left-arrow"> 
+        <span class="glyphicon glyphicon-menu-left">
+        </span>
+    </div> 
+    <div class="right-glyphicon-arrow-div"  id="glyphicon-home-right-arrow">
+        <span class="glyphicon glyphicon-menu-right"></span>
+    </div> 
+          
+    
+        <%# end %>
+       <!-- 
+{{ 
+	    <div class="container subheading_menu_box_shadow">
+	        <div class="row">
+	            <div class="col-md-6 product_box_shadow">
+	                <div class="row">
+                        <div class="col-md-8 product_main_pic_div">
+                             <img class="col-md-12 product_main_pic" src="Images/p1_1.jpg">
+                        </div>
+                        <div class="col-md-4 product_secondary_pics_div">
+                             <a href="#">
+                              <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p1_2.jpg"   width="16.5%" height="100px">
+                             </a>
+                             <a href="#">
+                               <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p1_3.jpg"   width="16.5%" height="100px" >
+                             </a>
+                             <a href="#">
+                             <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p1_4.jpg"   width="16%"   height="100px">
+                             </a>
+                        </div>   
+	                </div>
+	                <div class="row">
+	                        <div class="col-md-8">
+	                          <h4><a href="#">Heading</a></h4>
+	                          <p>
+	                          	Who says updating your look should break the bank? With so many gorgeous dresses under $20, you can afford to treat yourself to a new look for the weekend.
+	                          </p>
+	                        </div>
+	                        <div class="col-md-4">
+	                          <p style="margin-top:20px">2 Items</p>
+	                          <p><b>Price:</b> US $100</p>
+	                          <p><a href="#">Shop Now</a></p>
+	                        </div>
+	                </div>
+	            </div>
+	            <div class="col-md-6 product_box_shadow">
+	                <div class="row">
+                        <div class="col-md-8 product_main_pic_div">
+                             <img class="col-md-12 product_main_pic" src="Images/p2_1.jpg">
+                        </div>
+                        <div class="col-md-4 product_secondary_pics_div">
+                             <a href="#">
+                              <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p2_2.jpg"   width="16.5%" height="100px">
+                             </a>
+                             <a href="#">
+                               <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p2_3.jpg"   width="16.5%" height="100px" >
+                             </a>
+                             <a href="#">
+                             <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p2_4.jpg"   width="16%"   height="100px">
+                             </a>
+                        </div>   
+	                </div>
+	                <div class="row">
+	                        <div class="col-md-8">
+	                          <h4><a href="#">Heading</a></h4>
+	                          <p>
+	                          	Who says updating your look should break the bank? With so many gorgeous dresses under $20, you can afford to treat yourself to a new look for the weekend.
+	                          </p>
+	                        </div>
+	                        <div class="col-md-4">
+	                          <p style="margin-top:20px">2 Items</p>
+	                          <p><b>Price:</b> US $100</p>
+	                          <p><a href="#">Shop Now</a></p>
+	                        </div>
+	                </div>
+	            </div>
+	      </div>
+	            <div class="row">
+	           <div class="col-md-6 product_box_shadow">
+	                <div class="row">
+                        <div class="col-md-8 product_main_pic_div">
+                             <img class="col-md-12 product_main_pic" src="Images/p1_1.jpg">
+                        </div>
+                        <div class="col-md-4 product_secondary_pics_div">
+                             <a href="#">
+                              <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p1_2.jpg"   width="16.5%" height="100px">
+                             </a>
+                             <a href="#">
+                               <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p1_3.jpg"   width="16.5%" height="100px" >
+                             </a>
+                             <a href="#">
+                             <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p1_1.jpg"   width="16%"   height="100px">
+                             </a>
+                        </div>   
+	                </div>
+	                <div class="row">
+	                        <div class="col-md-8">
+	                          <h4><a href="#">Heading</a></h4>
+	                          <p>
+	                          	Who says updating your look should break the bank? With so many gorgeous dresses under $20, you can afford to treat yourself to a new look for the weekend.
+	                          </p>
+	                        </div>
+	                        <div class="col-md-4">
+	                          <p style="margin-top:20px">2 Items</p>
+	                          <p><b>Price:</b> US $100</p>
+	                          <p><a href="#">Shop Now</a></p>
+	                        </div>
+	                </div>
+	            </div>
+	            <div class="col-md-6 product_box_shadow">
+	                <div class="row">
+                        <div class="col-md-8 product_main_pic_div">
+                             <img class="col-md-12 product_main_pic" src="Images/p2_1.jpg">
+                        </div>
+                        <div class="col-md-4 product_secondary_pics_div">
+                             <a href="#">
+                              <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p2_2.jpg"   width="16.5%" height="100px">
+                             </a>
+                             <a href="#">
+                               <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p2_3.jpg"   width="16.5%" height="100px" >
+                             </a>
+                             <a href="#">
+                             <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p2_4.jpg"   width="16%"   height="100px">
+                             </a>
+                        </div>   
+	                </div>
+	                <div class="row">
+	                        <div class="col-md-8">
+	                          <h4><a href="#">Heading</a></h4>
+	                          <p>
+	                          	Who says updating your look should break the bank? With so many gorgeous dresses under $20, you can afford to treat yourself to a new look for the weekend.
+	                          </p>
+	                        </div>
+	                        <div class="col-md-4">
+	                          <p style="margin-top:20px">2 Items</p>
+	                          <p><b>Price:</b> US $100</p>
+	                          <p><a href="#">Shop Now</a></p>
+	                        </div>
+	                </div>
+	            </div>
+	      </div>
+	
+	 </div>
+	 
+	 <div class="container">
+	      <h2><a href="#" class="main_heading"><b>Electronics</b></a></h2>
+	 </div>
+	 <div class="container subheading_menu_box_shadow">
+	           <div class="row">
+	           <div class="col-md-6 product_box_shadow">
+	                <div class="row">
+                        <div class="col-md-8 product_main_pic_div">
+                             <img class="col-md-12 product_main_pic" src="Images/p1_1.jpg">
+                        </div>
+                        <div class="col-md-4 product_secondary_pics_div">
+                             <a href="#">
+                              <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p1_2.jpg"   width="16.5%" height="100px">
+                             </a>
+                             <a href="#">
+                               <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p1_3.jpg"   width="16.5%" height="100px" >
+                             </a>
+                             <a href="#">
+                             <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p1_4.jpg"   width="16%"   height="100px">
+                             </a>
+                        </div>   
+	                </div>
+	                <div class="row">
+	                        <div class="col-md-8">
+	                          <h4><a href="#">Heading</a></h4>
+	                          <p>
+	                          	Who says updating your look should break the bank? With so many gorgeous dresses under $20, you can afford to treat yourself to a new look for the weekend.
+	                          </p>
+	                        </div>
+	                        <div class="col-md-4">
+	                          <p style="margin-top:20px">2 Items</p>
+	                          <p><b>Price:</b> US $100</p>
+	                          <p><a href="#">Shop Now</a></p>
+	                        </div>
+	                </div>
+	            </div>
+	            <div class="col-md-6 product_box_shadow">
+	                <div class="row">
+                        <div class="col-md-8 product_main_pic_div">
+                             <img class="col-md-12 product_main_pic" src="Images/p2_1.jpg">
+                        </div>
+                        <div class="col-md-4 product_secondary_pics_div">
+                             <a href="#">
+                              <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p2_2.jpg"   width="16.5%" height="100px">
+                             </a>
+                             <a href="#">
+                               <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p2_3.jpg"   width="16.5%" height="100px" >
+                             </a>
+                             <a href="#">
+                             <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p2_4.jpg"   width="16%"   height="100px">
+                             </a>
+                        </div>   
+	                </div>
+	                <div class="row">
+	                        <div class="col-md-8">
+	                          <h4><a href="#">Heading</a></h4>
+	                          <p>
+	                          	Who says updating your look should break the bank? With so many gorgeous dresses under $20, you can afford to treat yourself to a new look for the weekend.
+	                          </p>
+	                        </div>
+	                        <div class="col-md-4">
+	                          <p style="margin-top:20px">2 Items</p>
+	                          <p><b>Price:</b> US $100</p>
+	                          <p><a href="#">Shop Now</a></p>
+	                        </div>
+	                </div>
+	            </div>
+	      </div>
+	            <div class="row">
+	           <div class="col-md-6 product_box_shadow">
+	                <div class="row">
+                        <div class="col-md-8 product_main_pic_div">
+                             <img class="col-md-12 product_main_pic" src="Images/p1_1.jpg">
+                        </div>
+                        <div class="col-md-4 product_secondary_pics_div">
+                             <a href="#">
+                              <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p1_2.jpg"   width="16.5%" height="100px">
+                             </a>
+                             <a href="#">
+                               <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p1_3.jpg"   width="16.5%" height="100px" >
+                             </a>
+                             <a href="#">
+                             <img class="col-md-12 product_secondary_pic_1_2_3" src="Images/p1_1.jpg"   width="16%"   height="100px">
+                             </a>
+                        </div>   
+	                </div>
+	                <div class="row">
+	                        <div class="col-md-8">
+	                          <h4><a href="#">Heading</a></h4>
+	                          <p>
+	                          	Who says updating your look should break the bank? With so many gorgeous dresses under $20, you can afford to treat yourself to a new look for the weekend.
+	                          </p>
+	                        </div>
+	                        <div class="col-md-4">
+	                          <p style="margin-top:20px">2 Items</p>
+	                          <p><b>Price:</b> US $100</p>
+	                          <p><a href="#">Shop Now</a></p>
+	                        </div>
+	                </div>
+	            </div>
+	      </div> }}
+ -->
+	 </section> 

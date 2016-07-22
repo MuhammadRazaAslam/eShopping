@@ -1,0 +1,165 @@
+<header  class="container-fluid" style="background-color:white">
+    <div class="row">
+        <div class="col-md-3" style="font-size:20px; padding-top:5px; padding-bottom:5px;">
+            <h4>
+                <b>
+                    <a href="/">Back to Home Page</a>
+                </b>
+            </h4>
+        </div>
+        <div class="col-md-7" align="center">
+            <h4>Admin Panel eShoppingHub</h4>
+        </div>
+        <div class="col-md-1" align="center" style="padding-top:5px">
+            adminxyz
+        </div>
+        <div class="col-md-1"  align="center" style="padding-top:5px">
+            <a href="/">
+                Logout
+                <span class="glyphicon glyphicon-log-out"></span>
+            </a>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="col-md-2" style="background-color:lightblue">
+        <div class="row" style="padding-top:10px; font-size:16px">
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px">
+                <span class="glyphicon glyphicon-dashboard"></span>
+                    Dashboard
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="headerCategories">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/header_categories">Header Categories</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px "id="subCategories">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/categories_subcategories">SubCategories</a>
+            </div>
+            <div class="col-md-12" style="background-color:orange; padding-top:5px; padding-bottom:5px">
+               <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/brands">Brands</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="users">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/users">Users</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="orderItems">
+                <a href="orderItems">Order/Sold Items</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="messages">
+                <a href="messages">Messages</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="sliderPics">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/slider_display_pics">Slider/PagesDisplay Pics</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="report">
+                Report
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Brands</h2>
+            </div>
+            <% @category = Category.all %>
+            <% @category.each do |cat| %>
+                <div class="col-md-12" style="margin-top:20px">
+                    <div class="col-md-4">
+                        <h3><%= cat[:category_name] %></h3>
+                    </div>
+                    <div class="col-md-2 col-md-offset-6 btn btn-primary" style="margin-top:10px;"  data-target="#<%= cat[:id] %>_modal" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span>Add New Brand
+                    </div>
+                </div>
+                <div id="<%= cat[:id] %>_modal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" data-dismiss="modal" class="close">&times;</button>
+                                <h3>Add New Brand</h3>
+                            </div>
+                            <div class="modal-body">
+                                <%= form_for :bra, url: new_category_brand_path(cat[:id]), method: :get do |f| %>
+                                    <div class="row" style="margin-top:10px">
+                                        <div class="col-md-6">
+                                            <strong><%= Category %></strong>
+                                            <%= f.text_field :category_name, :class => "form-control", :value => cat[:category_name], disabled: true %>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:10px">
+                                        <div class="col-md-6">
+                                            <strong><%= "Enter Brand Name" %></strong>
+                                            <%= f.text_field :brand_name, :class => "form-control", :placeholder => "Brand Name" %>
+                                        </div>
+                                    </div>
+                                    <%= f.submit :Create, :class => "btn btn-primary", :style => "margin-top:10px" %>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="home_and_living_modal_edit" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" data-dismiss="modal" class="close">&times;</button>
+                                <h3>Edit Brand Name</h3>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Category Name</label>
+                                            <input type="text" class="form-control" disabled placeholder="Home and Living">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:10px">
+                                        <div class="col-md-6">
+                                            <label>Enter Brand Name</label>
+                                            <input type="text" class="form-control" value="Kitchen and Dining">
+                                        </div>
+                                    </div>
+                                    <button type="button" style="margin-top:10px;" class="btn btn-primary">Update
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Brand Id</th>
+                                <th>Brand Name</th>
+                                <th>Total Products</th>
+                                <th>Category Id</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <%#= link_to :show_all_subcategories, category_subcategory_index_path(cat[:id]) %>
+                        <%# if defined?@subcategory.each %>
+                        <%# @subcategory.each do |subcat| %>
+                            <%# subcat.index %>
+                            <% @brand = Brand.all %>
+                            <%#= @subcategory.where("categories_id==1") do |subcat| %>
+                            <% @brand.each do |bra| %>
+                            <% if bra[:categories_id] == cat[:id] %>
+                            <tr>                         
+                                <td><%= bra[:id] %></td>
+                                <td><%= bra[:brand_name] %></td>
+                                <td>230</td>
+                                <td><%= bra[:categories_id] %></td>
+                                <td>
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#home_and_living_modal_edit">Edit</button>
+                                    <%#= link_to 'Edit', edit_category_subcategory_path(cat, sub), :class => "btn btn-info", "data-toggle" => "modal" , "data-target" => "#home_and_living_modal_edit" %>
+                                    <%= link_to 'Delete', category_brand_path(cat,bra), method: :delete, :class => "btn btn-danger", data: {confirm: 'Are you sure?' } %>
+                                </td>
+                            </tr>
+                        <% end %>
+                        <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</section>    

@@ -1,0 +1,6 @@
+<%= form_for :cat, url: admin_panel_dashboard_category_create_path do |f| %>
+	<%= "Enter Category Name : " %>
+	<%= f.text_field :category_name %>
+	<%= f.submit :Create %>
+<% end %>
+<%= link_to :List, admin_panel_dashboard_category_index_path %>

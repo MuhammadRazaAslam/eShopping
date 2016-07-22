@@ -1,0 +1,2 @@
+module AdminPanelDashboard::CategoryHelper
+end

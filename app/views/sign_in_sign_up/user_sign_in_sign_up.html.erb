@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4" style=" margin-top:20px" align="center">
+            <img src="/logo1.png" class="img-responsive" alt="Not Uploaded" style="background-color:yellow; opacity:1">
+        </div>
+        <div class="col-md-4 col-md-offset-4" id="main-box">
+             <div class="row">
+                <div id="sign-in" class="col-md-6">
+                    <span id="sign-in-glyphicon-circle-arrow-right" class="glyphicon glyphicon-circle-arrow-right"></span> 
+                    <span id="sign-in-span-text">Sign In</span>
+                </div>
+                <div id="registration" class="col-md-6">
+                    <span id="registration-glyphicon-plus-sign" class="glyphicon glyphicon-plus-sign"></span> <span id="registration-span-text">Register</span>
+                </div>
+                <div id="sign-in-form">
+                <%= form_for :sign_in, url:  sign_in_sign_up_signed_in_path do |s| %>
+                    <div id="below-sign-in-registration-row" class="col-md-12">
+                          <div class="form-group has-feedback">
+                              <%= s.email_field :email, :placeholder => "Email", :class => "form-control", required: :true %>
+                               <span class="form-control-feedback glyphicon glyphicon-user feedback"></span>
+                          </div>
+                          <div class="form-group has-feedback">
+                          <%= s.password_field :password, :placeholder => "Password", :class => "form-control", required: :true %>
+                               <span class="form-control-feedback glyphicon glyphicon-lock" style=""></span>
+                          </div>
+                          <div class="col-md-6" >
+                               <input type="checkbox" id="check-box" /> Remember me
+                          </div>
+                          <div class="col-md-6" align="right">
+                               <button type="submit" class="btn btn-primary">Sign In  <span id="sign-in-button" class="glyphicon glyphicon-circle-arrow-right"></span></button>
+                         </div>
+                    </div>
+                    <div class="col-md-12" id="forgot-password">
+                        <span>Forgot your pasword?</span>
+                    </div>
+                    <div class="col-md-12" id="here-row">
+                         no worries.click <a href="">here</a> to reset your password
+                    </div>
+                    <% end %>
+                </div>
+                <div id="registration-form" style="display:none;">
+                    
+                 <!--    <form id="contactForm">
+                  -->   <%= form_for :sign_up, id: "contactForm", url: new_buyer_path, method: :get do |f_sign_up| %>
+                        <div id="below-sign-in-registration-row" class="col-md-12">
+                            <div class="form-group has-feedback">
+                               <%= f_sign_up.text_field :first_name, :class => "form-control", :placeholder => "First Name" %>
+                               <span class="form-control-feedback glyphicon glyphicon-user feedback"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <%= f_sign_up.text_field :last_name, :class => "form-control", :placeholder => "Last Name" %>
+                                <span class="form-control-feedback glyphicon glyphicon-user feedback"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <%= f_sign_up.email_field :email, :class => "form-control", :placeholder => "abc@gmail.com" %>
+                                <span class="form-control-feedback glyphicon glyphicon-user feedback"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <%= f_sign_up.password_field :password, :class => "form-control", :placeholder => "Password" %>
+                                <span class="form-control-feedback glyphicon glyphicon-lock" style=""></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <%= f_sign_up.password_field :password_confirmation, :class => "form-control", :placeholder => "Re-enter Password" %>
+                                <span class="form-control-feedback glyphicon glyphicon-lock" style=""></span>
+                            </div>
+                            <div class="form-group">
+                                <%= f_sign_up.phone_field :phone_no, :class => "form-control", :placeholder => "Phone No" %>
+                            </div>
+                            <div class="form-group">
+                                <%= f_sign_up.text_field :address, :class => "form-control", :placeholder => "Address" %>
+                            </div>
+                            <div class="col-md-12 col" align="right">
+                                <%= f_sign_up.submit "Create Account", :class => "btn btn-primary" %>
+                                
+                                <button type="submit" class="btn btn-primary">Create Account  <span id="sign-in-button" class="glyphicon glyphicon-circle-arrow-right"></span></button>
+                            </div>
+                            <div class="col-md-12" style="padding-top:20px; border-bottom:2px solid grey;">
+                            </div>
+                            <div class="col-md-12">
+                                <p style="margin-top:20px; font-weight:; color:grey">WANT TO CREATE YOUR OWN STORE?
+                                </p>
+                                <p>
+                                    <a href="sign_in_sign_up/seller_business_account_sign_up">Registor for a bussiness account</a>
+                                </p>
+                            </div>
+                        </div>
+                        <% end %>   
+                 <!--    </form> -->
+                </div>
+                <div class="col-md-12" align="center" style="border-bottom:1px solid lightgrey; padding-bottom:10px">
+                    <span>eShoppingHub &copy 2016-2030 All Rights Reserved.</span>
+                </div>   
+            </div>
+         </div>
+    </div>
+</div>    

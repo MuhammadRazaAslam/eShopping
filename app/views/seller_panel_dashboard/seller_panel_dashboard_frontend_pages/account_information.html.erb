@@ -1,0 +1,138 @@
+<%= session[:current_user_id] %>
+
+<header  class="container-fluid" style="background-color:white">
+    <div class="row">
+        <div class="col-md-3" style="font-size:20px; padding-top:5px; padding-bottom:5px;">
+            <h4>
+                <strong>
+                    <a href="/">Back to Home Page</a>
+                </strong>
+            </h4>
+        </div>
+        <div class="col-md-5" align="center">
+            <h4>Admin Panel eShoppingHub</h4>
+        </div>
+        <div class="col-md-2" align="center">
+            <h5>
+                <strong>
+                    <a href="">Go To Store</a>
+                </strong>
+            </h5>
+        </div>
+        <div class="col-md-1" align="center" style="padding-top:5px">
+            adminxyz
+        </div>
+        <div class="col-md-1"  align="center" style="padding-top:5px">
+            <a href="/">
+                Logout
+                <span class="glyphicon glyphicon-log-out"></span>
+            </a>
+        </div>
+    </div>
+</header>
+    <section>
+            <div class="col-md-2" style="background-color:lightblue">
+            <div class="row" style="padding-top:10px; font-size:16px">
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px">
+                    <span class="glyphicon glyphicon-dashboard"></span>
+                    Dashboard
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="headerCategories">
+                    <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/add_product">Add Product</a>
+                </div>
+                <div class="col-md-12" style="background-color:orange; padding-top:5px; padding-bottom:5px" id="subCategories">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/view_products">View Produts</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="otherCategories">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/order_products">Order Products</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="users">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/sold_products">Sold Products</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="orderItems">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/messages">Messages</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="orderItems">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/comments">Comments</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="soldItems">
+                     <a href="/seller_panel_dashboard/seller_panel_dashboard_frontend_pages/account_information">Account Information</a>
+                </div>
+                <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="report">
+                     Report
+                </div>
+            </div>
+        </div>
+       <div class="col-md-10">
+                 <h1 style="margin-left:10px">My Account Information</h1>
+                  <div class="col-md-4">
+                     <div id="below-sign-in-registration-row" class="col-md-12">
+                          <div class="form-group has-feedback">
+                               <label>Store Name: </label>
+                               <input type="email" class="form-control" value="Raza"><span class="form-control-feedback glyphicon glyphicon-user feedback"></span>
+                          </div>
+                          <div class="form-group has-feedback">
+                               <label>First Name: </label>
+                               <input type="email" class="form-control" value="Raza"><span class="form-control-feedback glyphicon glyphicon-user feedback"></span>
+                          </div>
+                          <div class="form-group has-feedback">
+                               <label>Last Name: </label>
+                               <input type="email" class="form-control" value="Aslam"><span class="form-control-feedback glyphicon glyphicon-user feedback"></span>
+                          </div>
+                          <div class="form-group has-feedback">
+                              <label>Store Description(Optional): </label>
+                              <textarea class="form-control" style="height:150px; width:250px"></textarea>
+                          </div>
+                          <div class="form-group has-feedback">
+                               <label>Email Id: </label>
+                               <input type="email" class="form-control" value="raza.aslam29@gmail.com"><span class="form-control-feedback glyphicon glyphicon-user feedback"></span>
+                          </div>
+                          <div class="form-group has-feedback">
+                               <label>Password: </label>
+                               <input type="password" class="form-control" value="123456">
+                               <span class="form-control-feedback glyphicon glyphicon-lock"></span>
+                          </div>
+                          <div class="form-group has-feedback">
+                               <label>Confirm Password: </label>
+                               <input type="password" class="form-control" value="123456">
+                               <span class="form-control-feedback glyphicon glyphicon-lock"></span>
+                          </div>
+                          <div class="form-group">
+                                <label>Country:</label>
+                                <select class="col-md-12 form-control">
+                                    <option>Select Country</option>
+                                    <option>Pakistan</option>
+                                    <option>UAE</option>
+                                    <option>Canada</option>
+                                </select>
+                          </div>
+                          <div class="form-group">
+                                <label style="padding-top:15px">Province: </label>
+                                <select class="col-md-12 form-control">
+                                    <option>Select Province</option>
+                                    <option>Punjab</option>
+                                    <option>Sindh</option>
+                                    <option>KPK</option>
+                                </select>
+                          </div>
+                          <div class="form-group">
+                                <label style="padding-top:15px">City: </label>
+                                <select class="form-control" >
+                                    <option>Select City</option>
+                                    <option>Lahore</option>
+                                    <option>Karachi</option>
+                                    <option>Multan</option>
+                                </select>
+                          </div> 
+                          <div class="form-group">
+                                <label>Phone #: </label>
+                                <input type="tel" class="form-control" value="0336-4163069" />
+                          </div>
+                          <button style="margin-bottom:20px;" type="button" class="btn btn-primary">Update Info</button>
+                   
+                     </div>
+                  </div>
+
+            </div>
+        </div>
+    </section>

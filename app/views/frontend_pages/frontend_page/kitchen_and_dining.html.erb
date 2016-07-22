@@ -1,0 +1,222 @@
+<%= render 'layouts/header' %>
+    <section style="background-color:#F0F0F0; padding:1px">  <!--  for section background color --> 
+        <div class="container" style="background-color:lightgrey;">
+            <div class="row" style="background-color:lightgrey">
+                <div class="col-md-12 hidden-sm hidden-xs">
+                    <h3>Home and Living -> Kitchen and Dining</h3>
+                </div>
+            </div>
+            <div class="row"> 
+                        <div class="col-md-3 col-sm-4 hidden-xs" style="color:#673A09; background-color:lightgrey">
+                              <div class="row" style="border:2px solid #8E7D7D; padding:15px;  ">
+                                  <div class="col-md-12 col-sm-12" style="border-top:2px solid rgb(115,123,125); background-color:#E5E5E8; border-bottom:2px solid rgb(115,123,125) ; padding:5px; margin-bottom:10px">
+                                    <b>Home and Living</b>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2" style=" padding-left:20px;">
+                                <span class="glyphicon glyphicon-menu-right"></span>
+                            </div>
+                            <div class="col-md-10 col-sm-10" style="margin-left:-20px;">
+                                Kichen and Dining (230)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2" style=" padding-left:20px;">
+                                <span class="glyphicon glyphicon-menu-right"></span>
+                            </div>
+                            <div class="col-md-10 col-sm-10" style="margin-left:-20px;">
+                                Bathing(231)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2" style=" padding-left:20px;">
+                                <span class="glyphicon glyphicon-menu-right"></span>
+                            </div>
+                            <div class="col-md-10 col-sm-10" style="margin-left:-20px;">
+                                Outdoor and Gargen(456)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2" style=" padding-left:20px;">
+                                <span class="glyphicon glyphicon-menu-right"></span>
+                            </div>
+                            <div class="col-md-10 col-sm-10" style="margin-left:-20px;">
+                                Home Repairs (56)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2" style=" padding-left:20px;">
+                                <span class="glyphicon glyphicon-menu-right"></span>
+                            </div>
+                            <div class="col-md-10 col-sm-10" style="margin-left:-20px;">
+                                 Home Decorators(456)
+                            </div>
+                        </div>
+                    </div>
+                              <div class="row" style="border:2px solid #8E7D7D; padding:15px; margin-top:20px ">
+                                  <div class="col-md-12" style="background-color:#E5E5E8; border-top:2px solid rgb(115,123,125) ; border-bottom:2px solid rgb(115,123,125) ; padding:5px; margin-bottom:10px">
+                             <b>Brand</b>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style=" padding-left:20px;">
+                                Search for: 
+                                <div class="form-group has-feedback"  style=" width:80%;">
+                                    <input class="form-control" type="search" placeholder="Search">
+                                    <span class="glyphicon glyphicon-search form-control-feedback" ></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="margin-left:10px;">
+                                <div class="row" style="width:80%">
+                                    <div class="col-md-12 " style="overflow-y:scroll; overflow-x:hidden; height:100px">
+                                        <input type="checkbox"><span> Anex(34)</span>
+                                        <br>                                              
+                                        <input type="checkbox"><span> Casio(12)</span>
+                                        <br>
+                                        <input type="checkbox"><span> Cannon(3)</span>
+                                        <br>
+                                        <input type="checkbox"><span> Anex(34)</span>
+                                        <br>
+                                        <input type="checkbox"><span> Casio(12)</span>
+                                        <br>
+                                        <input type="checkbox"><span> Cannon(3)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-8" style="background-color:lightgrey;">
+                            <!--    <div class="row" style="padding:10px 15px 15px 15px">
+                                   <div class="col-md-12 col-sm-12" style="border-bottom:1px solid black">
+                                   </div>
+                              </div>
+                             -->
+                    <div class="row" style="background-color:lightgrey">
+                        <div class="col-md-2 col-md-offset-1 col-sm-3 col-xs-12">
+                            <button class="btn btn-primary" style="margin-top:10px;" id="all_products_btn"><b>All Products</b></button>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <button class="btn btn-default" style="margin-top:10px;" id="top_star_products_btn"><b>Top/Star Products</b>
+                            </button>
+                        </div>
+                    </div>
+                    <div   class="all_products_row row">
+                         <div class="col-md-12" style="background-color:lightgrey; width:96%; margin:2%;       box-shadow:2px 2px 5px black">
+                              <div class="row" style="padding:15px;">
+                                    <% currkd = 0 %>
+                                    <% arrkd = Array.new %>
+                                    <% (0...16).each do |i| %>
+                                        <% arrkd[i] = "/images/h#{i}.jpg" %>
+                                    <% end %>
+                                    <% (0...8).each do |i| %>
+                                        <% currkd += 1 %>
+                                   <div class="col-md-4" style="margin-top:10px">
+                                        <div style="padding:0px; border:1px solid darkgrey; box-shadow:1px 1px 1px grey">
+                                            <div class="row" style="text-align:left">
+                                                <div class="col-md-12"> 
+                                                    <img src="<%= arrkd[currkd] %>" id="pic-44-4" class="img-responsive" style="height:200px" width="100%" alt="Not Uploaded">
+                                                    <div class="kitchen-and-dining-item-heading">
+                                                        <a href="/frontend_pages/frontend_page/detail_page" style="color:white">
+                                                        <h4>Combo of One Selfi Stick</h4>
+                                                        </a>
+                                                    </div>
+                                                </div> 
+                                                <div class="col-md-12">
+                                                    <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12" style="background-color:lightblue">
+                                                        <b>Price: </b>US $100
+                                                    </div>
+                                                    <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12" style="background-color:lightblue;">
+                                                        <span><b>Items:</b> 34</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                     <div class="col-lg-12 col-md-12" style="background-color:lightblue;">
+                                                          <b>Seller: Raza Aslam</b>
+                                                     </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    
+                                                    <div class="col-lg-7 col-md-6" style="background-color:lightblue;">
+                                                        <b>Date: 7-5-16</b>
+                                                    </div>
+
+                                                    <div class="col-lg-5 col-md-6" style="background-color:lightblue;">
+                                                        <b><a href="/frontend_pages/frontend_page/detail_page">Shop Now</a></b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                   </div>
+                                    <% end %>
+                                   
+                              </div>  
+                        </div>
+                    </div>
+
+                    <div class="top_star_products_row row" style="display:none">
+                         <div class="col-md-12" style="background-color:lightgrey; width:96%; margin:2%;       box-shadow:2px 2px 5px black">
+                              <div class="row" style="padding:15px;">
+                                    <% currkd = 0 %>
+                                    <% (0...8).each do |i| %>
+                                        <% arrkd[i] = "/images/e#{i}.jpg" %>
+                                    <% end %>
+                                    <% (0...8).each do |i| %>
+                                        <% currkd += 1 %>
+                                   <div class="col-md-4" style="margin-top:10px">
+                                        <div style="padding:0px; border:1px solid darkgrey; box-shadow:1px 1px 1px grey">
+                                            <div class="row" style="text-align:left">
+                                                <div class="col-md-12"> 
+                                                    <img src="<%= arrkd[currkd] %>" id="pic-44-4" class="img-responsive" style="height:200px" width="100%" alt="Not Uploaded">
+                                                    <div class="kitchen-and-dining-item-heading">
+                                                        <a href="/new_detail_page" style="color:white">
+                                                        <h4>Combo of One Selfi Stick</h4>
+                                                        </a>
+                                                    </div>
+                                                </div> 
+                                                <div class="col-md-12">
+                                                    <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12" style="background-color:lightblue">
+                                                        <b>Price: </b>US $100
+                                                    </div>
+                                                    <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12" style="background-color:lightblue;">
+                                                        <span><b>Items:</b> 34</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                     <div class="col-lg-12 col-md-12" style="background-color:lightblue;">
+                                                          <b>Seller: Raza Aslam</b>
+                                                     </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    
+                                                    <div class="col-lg-7 col-md-6" style="background-color:lightblue;">
+                                                        <b>Date: 7-5-16</b>
+                                                    </div>
+
+                                                    <div class="col-lg-5 col-md-6" style="background-color:lightblue;">
+                                                        <b><a href="">Shop Now</a></b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                   </div>
+                                   <% end %>
+                              </div>  
+                        </div>
+                    </div>
+                    <div class="row" style="text-align:center">
+                         <div class="col-md-12">
+                              <ul class="pagination">
+                                  <li class="kd-page-1 pagination-pages active"><a href="">1</a></li>
+                                  <li class="kd-page-2 pagination-pages"><a href="">2</a></li>
+                                  <li class="pagination-pages"><a href="">3</a></li>
+                                  <li class="pagination-pages"><a href="">4</a></li>
+                                  <li class="pagination-pages"><a href="">5</a></li>
+                              </ul>
+                         </div>
+                    </div>           
+                </div>
+            </div>
+        </div>
+    </section>

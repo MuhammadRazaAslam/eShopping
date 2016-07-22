@@ -1,0 +1,455 @@
+       <div class="col-md-10">
+       <div class="row">
+            <div class="col-md-12">
+                <h2>View All Products</h2>
+            </div>
+       </div>
+       <form>
+       <div class="row">
+            <div class="form-group col-md-3">
+                <label>Select Category: </label>
+                <select class="form-control">
+                  <option>Select Category</option>
+                  <option>Home and Living</option>
+                  <option>Electronics</option>
+                  <option>Clothing</option>
+                  <option>Toys,Kids,Babies</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label>Select Sub Category: </label>
+                <select class="form-control">
+                  <option>Select Sub Category</option>
+                  <option>Kictchen and Dining</option>
+                  <option>Mens</option>
+                  <option>Womens</option>
+                  <option>Home Decorators</option>
+                </select>
+           </div>
+       </div>
+       </form>
+       <div class="row">
+            <div class="col-md-12" style="margin-top:10px">
+                 <table class="table table-bordered" id="order_pending_table">
+                       <thead>
+                          <tr>
+                              <th>Product Id</th>
+                              <th>Product Name</th>
+                              <th>Price</th>
+                              <th>Quantity</th>
+                              <th>Brand Name</th>
+                              <th>Category</th>
+                              <th>Sub Category</th>
+                              <th>Date</th>
+                              <th>Pic 1</th>
+                              <th>Pic 2</th>
+                              <th>Pic 3</th>
+                              <th>Pic 4</th>
+                              <th>Demo Video</th>
+                              <th>Action</th>
+                          </tr>
+                       </thead>
+                       <tbody>
+                          <tr>
+                             <td>1</td>
+                             <td>5PCS Bath Accessory Set Resin Soap Dish Dispenser Tumbler Toothbrush Holder</td>
+                             <td>US $56</td>
+                             <td>34</td>
+                             <td>SamSung</td>
+                             <td>DELL</td>
+                             <td>Electronics</td>
+                             <td>2-Feb-16</td>
+                             <td>
+                               <img src="Images/p1_1.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="Images/p1_2.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="Images/c1.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="Images/c2.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                                 <button type="button" class="btn btn-primary" data-toggle="modal"
+                                 data-target="#mymodal">Watch</button>
+                                 <div id="mymodal" class="modal fade">
+                                     <div class="modal-dialog">
+                                        <div class="modal-content" style="background-color:black">
+                                             <div class="modal-header">
+                                                 <button class="close" data-dismiss="modal">&times;</button>
+                                                 <h3 class="modal-title" style="color:white">Watch Demo
+                                                 </h3>
+                                             </div>
+                                             <div class="modal-body">
+                                                  <video width="100%" controls>
+                                                       <source src="\raza.mp4">
+                                                  </video>
+                                             </div>
+                                        </div>
+                                    </div>
+                                 </div>
+                             </td>
+                             <td>
+                                <button type="button" class="btn btn-primary col-md-12" style="margin-bottom:5px" data-toggle="modal" data-target="#edit_seller_product">Edit</button>
+                                <div id="edit_seller_product" class="modal fade">
+                                    <div class="modal-dialog">
+                                         <div class="modal-content">
+                                              <div class="modal-header">
+                                                  <button class="close" data-dismiss="modal">&times;</button>
+                                                  <h3>Edit Product Information</h3>
+                                              </div>
+                                              <div class="modal-body">
+                                                  <form>
+                                                      <div class="form-group col-md-3">
+                                                          <label>Product Id: </label>
+                                                          <input type="text" placeholder="1" class="form-control" disabled>
+                                                      </div>
+                                                      <div class="form-group col-md-7" style="visibility:hidden">
+                                                          <label>Product Id: </label>
+                                                          <input type="text" placeholder="1" class="form-control" disabled>
+                                                      </div>
+                                                      <div class="form-group col-md-12">
+                                                          <label>Product Name: </label>
+                                                          <input type="text" placeholder="5PCS Bath Accessory Set Resin Soap Dish Dispenser Tumbler Toothbrush Holder" class="form-control" required>
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Select Category: </label>
+                                                          <select class="form-control">
+                                                            <option>Select Category</option>
+                                                            <option>Home and Living</option>
+                                                            <option class="active">Electronics</option>
+                                                            <option>Clothing</option>
+                                                            <option>Toys,Kids,Babies</option>
+                                                          </select>
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Select Sub Category: </label>
+                                                          <select class="form-control">
+                                                           <option>Select Sub Category</option>
+                                                           <option>Kictchen and Dining</option>
+                                                           <option class="active">Mens</option>
+                                                           <option>Womens</option>
+                                                           <option>Home Decorators</option>
+                                                          </select>
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Select Brand Name: </label>
+                                                          <select class="form-control">
+                                                            <option>Select Brand Name:</option>
+                                                            <option>Samsung</option>
+                                                            <option class="active">LG</option>
+                                                            <option>NOKIA</option>
+                                                            <option>QMOBILE</option>
+                                                          </select>
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Product Price: </label>
+                                                          <input type="text" placeholder="US $56" class="form-control" required>
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Quantity: </label>
+                                                          <input type="number" min="1" max="200" value="34" class="form-control" required>
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Item Condition: </label>
+                                                          <select class="form-control">
+                                                            <option>New</option>
+                                                          </select>
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Pic 1: </label>
+                                                          <input type="file" accept="image/*">
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Pic 2: </label>
+                                                          <input type="file" accept="image/*">
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Pic 3(Optional): </label>
+                                                          <input type="file" accept="image/*">
+                                                      </div>
+                                                      <div class="form-group col-md-5">
+                                                          <label>Pic 4(Optional): </label>
+                                                          <input type="file" accept="image/*">
+                                                      </div>
+                                                      <div class="form-group" style="margin-top:5px; margin-left:15px">
+                                                          <label>Upload Demo Video(Optional):</label>
+                                                          <input type="file" accept="video/*">
+                                                      </div>
+                                                      <div class="form-group" style="margin-left:15px">
+                                                          <button type="button" class="btn btn-primary">Update Product</button>
+                                                      </div>
+                                                  </form>
+                                              </div>
+                                            </div>
+                                         </div>
+                                    </div>
+                               </div>
+                                <button type="button" class="btn btn-primary col-md-12 ">Delete</button>
+                             </td>
+                          </tr>
+                          <tr>
+                             <td>2</td>
+                             <td>5PCS Bath Accessory Set Resin Soap Dish Dispenser Tumbler Toothbrush Holder</td>
+                             <td>US $56</td>
+                             <td>34</td>
+                             <td>SamSung</td>
+                             <td>DELL</td>
+                             <td>Electronics</td>
+                             <td>2-Feb-16</td>
+                             <td>
+                               <img src="Images/p1_1.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="Images/p1_2.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="Images/c1.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="Images/c2.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                                 <button type="button" class="btn btn-primary" data-toggle="modal"
+                                 data-target="#mymodal">Watch</button>
+                                 <div id="mymodal" class="modal fade">
+                                     <div class="modal-dialog">
+                                        <div class="modal-content" style="background-color:black">
+                                             <div class="modal-header">
+                                                 <button class="close" data-dismiss="modal">&times;</button>
+                                                 <h3 class="modal-title" style="color:white">Watch Demo
+                                                 </h3>
+                                             </div>
+                                             <div class="modal-body">
+                                                  <video width="100%" controls>
+                                                       <source src="\raza.mp4">
+                                                  </video>
+                                             </div>
+                                        </div>
+                                    </div>
+                                 </div>
+                             </td>
+                             <td>
+                                <button type="button" class="btn btn-primary col-md-12" style="margin-bottom:5px">Edit</button>
+                                <button type="button" class="btn btn-primary col-md-12 ">Delete</button>
+                             </td>
+                          </tr>
+                          <tr>
+                             <td>3</td>
+                             <td>5PCS Bath Accessory Set Resin Soap Dish Dispenser Tumbler Toothbrush Holder</td>
+                             <td>US $56</td>
+                             <td>34</td>
+                             <td>SamSung</td>
+                             <td>DELL</td>
+                             <td>Electronics</td>
+                             <td>2-Feb-16</td>
+                             <td>
+                               <img src="Images/p1_1.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="Images/p1_2.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="Images/c1.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="Images/c2.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                                 <button type="button" class="btn btn-primary" data-toggle="modal"
+                                 data-target="#mymodal">Watch</button>
+                                 <div id="mymodal" class="modal fade">
+                                     <div class="modal-dialog">
+                                        <div class="modal-content" style="background-color:black">
+                                             <div class="modal-header">
+                                                 <button class="close" data-dismiss="modal">&times;</button>
+                                                 <h3 class="modal-title" style="color:white">Watch Demo
+                                                 </h3>
+                                             </div>
+                                             <div class="modal-body">
+                                                  <video width="100%" controls>
+                                                       <source src="\raza.mp4">
+                                                  </video>
+                                             </div>
+                                        </div>
+                                    </div>
+                                 </div>
+                             </td>
+                             <td>
+                                <button type="button" class="btn btn-primary col-md-12" style="margin-bottom:5px">Edit</button>
+                                <button type="button" class="btn btn-primary col-md-12 ">Delete</button>
+                             </td>
+                          </tr>
+                          <tr>
+                             <td>4</td>
+                             <td>5PCS Bath Accessory Set Resin Soap Dish Dispenser Tumbler Toothbrush Holder</td>
+                             <td>US $56</td>
+                             <td>34</td>
+                             <td>SamSung</td>
+                             <td>DELL</td>
+                             <td>Electronics</td>
+                             <td>2-Feb-16</td>
+                             <td>
+                               <img src="Images/p1_1.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="Images/p1_2.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="Images/c1.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="Images/c2.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                                 <button type="button" class="btn btn-primary" data-toggle="modal"
+                                 data-target="#mymodal">Watch</button>
+                                 <div id="mymodal" class="modal fade">
+                                     <div class="modal-dialog">
+                                        <div class="modal-content" style="background-color:black">
+                                             <div class="modal-header">
+                                                 <button class="close" data-dismiss="modal">&times;</button>
+                                                 <h3 class="modal-title" style="color:white">Watch Demo
+                                                 </h3>
+                                             </div>
+                                             <div class="modal-body">
+                                                  <video width="100%" controls>
+                                                       <source src="\raza.mp4">
+                                                  </video>
+                                             </div>
+                                        </div>
+                                    </div>
+                                 </div>
+                             </td>
+                             <td>
+                                <button type="button" class="btn btn-primary col-md-12" style="margin-bottom:5px">Edit</button>
+                                <button type="button" class="btn btn-primary col-md-12 ">Delete</button>
+                             </td>
+                          </tr>
+                          <tr>
+                             <td>5</td>
+                             <td>5PCS Bath Accessory Set Resin Soap Dish Dispenser Tumbler Toothbrush Holder</td>
+                             <td>US $56</td>
+                             <td>34</td>
+                             <td>SamSung</td>
+                             <td>DELL</td>
+                             <td>Electronics</td>
+                             <td>2-Feb-16</td>
+                             <td>
+                               <img src="Images/p1_1.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="Images/p1_2.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="Images/c1.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                               <img src="Images/c2.jpg" style="height:150px; width:300px" class="img-responsive" alt="Not Uploaded">
+                             </td>
+                             <td>
+                                 <button type="button" class="btn btn-primary" data-toggle="modal"
+                                 data-target="#mymodal">Watch</button>
+                                 <div id="mymodal" class="modal fade">
+                                     <div class="modal-dialog">
+                                        <div class="modal-content" style="background-color:black">
+                                             <div class="modal-header">
+                                                 <button class="close" data-dismiss="modal">&times;</button>
+                                                 <h3 class="modal-title" style="color:white">Watch Demo
+                                                 </h3>
+                                             </div>
+                                             <div class="modal-body">
+                                                  <video width="100%" controls>
+                                                       <source src="\raza.mp4">
+                                                  </video>
+                                             </div>
+                                        </div>
+                                    </div>
+                                 </div>
+                             </td>
+                             <td>
+                                <button type="button" class="btn btn-primary col-md-12" style="margin-bottom:5px">Edit</button>
+                                <button type="button" class="btn btn-primary col-md-12 ">Delete</button>
+                             </td>
+                          </tr>
+                       </tbody>
+                 </table>
+                 <table class="table table-bordered" id="order_completed_table" style="display:none">
+                 <thead>
+                          <tr>
+                              <th>Order No</th>
+                              <th>Seller Name</th>
+                              <th>Store Name</th>
+                              <th>Buyer Name</th>
+                              <th>Product Id</th>
+                              <th>Product Name</th>
+                              <th>Product Pic</th>
+                              <th>Quantity</th>
+                              <th>Price</th>
+                              <th>Status</th>
+                              <th>Date</th>
+                              <th>Action</th>
+                          </tr>
+                       </thead>
+                       <tbody>
+                          <tr>
+                             <td>54</td>
+                             <td>Raza</td>
+                             <td>Electronic Store</td>
+                             <td>Mehmood Ashfaq</td>
+                             <td>121</td>
+                             <td>LCD</td>
+                             <td>pic</td>
+                             <td>1</td>
+                             <td>$23</td>
+                             <td>Product Delivered</td>
+                             <td>5-July-16</td>
+                             <td>
+                               <a href="">
+                                 <span class="glyphicon glyphicon-trash"></span>
+                               </a>
+                             </td>
+                          </tr>
+                          <tr>
+                             <td>13</td>
+                             <td>Raza</td>
+                             <td>Electronic Store</td>
+                             <td>Mehmood Ashfaq</td>
+                             <td>121</td>
+                             <td>Dell i5 Laptop</td>
+                             <td>pic</td>
+                             <td>1</td>
+                             <td>$23</td>
+                             <td>Product Delivered</td>
+                             <td>12-June-16</td>
+                             <td>
+                               <a href="">
+                                 <span class="glyphicon glyphicon-trash"></span>
+                               </a>
+                             </td>
+                          </tr>
+                          <tr>
+                             <td>3</td>
+                             <td>Raza</td>
+                             <td>Electronic Store</td>
+                             <td>Mehmood Ashfaq</td>
+                             <td>121</td>
+                             <td>Refrigerator</td>
+                             <td>pic</td>
+                             <td>1</td>
+                             <td>$23</td>
+                             <td>Product Delivered</td>
+                             <td>12-Oct-16</td>
+                             <td>
+                               <a href="">
+                                 <span class="glyphicon glyphicon-trash"></span>
+                               </a>
+                             </td>
+                          </tr>
+                       </tbody>
+                 </table>
+            </div>
+       </div>
+  </div>

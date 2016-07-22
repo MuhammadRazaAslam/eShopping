@@ -1,0 +1,296 @@
+<header  class="container-fluid" style="background-color:white">
+    <div class="row">
+        <div class="col-md-3" style="font-size:20px; padding-top:5px; padding-bottom:5px;">
+            <h4>
+                <b>
+                    <a href="/">Back to Home Page</a>
+                </b>
+            </h4>
+        </div>
+        <div class="col-md-7" align="center">
+            <h4>Admin Panel eShoppingHub</h4>
+        </div>
+        <div class="col-md-1" align="center" style="padding-top:5px">
+            adminxyz
+        </div>
+        <div class="col-md-1"  align="center" style="padding-top:5px">
+            <a href="/">
+                Logout
+                <span class="glyphicon glyphicon-log-out"></span>
+            </a>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="col-md-2" style="background-color:lightblue">
+        <div class="row" style="padding-top:10px; font-size:16px">
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px">
+                <span class="glyphicon glyphicon-dashboard"></span>
+                    Dashboard
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="headerCategories">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/header_categories">Header Categories</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="subCategories">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/categories_subcategories">SubCategories</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px">
+               <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/brands">Brands</a>
+            </div>
+            <div class="col-md-12" style="background-color:orange; padding-top:5px; padding-bottom:5px" id="users">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/users">Users</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="orderItems">
+                <a href="orderItems">Order/Sold Items</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="messages">
+                <a href="messages">Messages</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="sliderPics">
+                <a href="/admin_panel_dashboard/admin_panel_dashboard_frontend_pages/slider_display_pics">Slider/PagesDisplay Pics</a>
+            </div>
+            <div class="col-md-12" style="padding-top:5px; padding-bottom:5px" id="report">
+                Report
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-12">
+               <h2>Users</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-md-offset-2 ">
+                <button type="button" class="btn btn-primary" id="admins_information_btn" style="font-size:16px">
+                    <b>Admins Information</b>
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-default" id="sellers_information_btn" style="font-size:16px">
+                    <b>Sellers Information</b>
+                </button>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-default" id="buyers_information_btn" style="font-size:16px"> 
+                    <b>Buyers Information</b> 
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <button type="button" class="btn btn-primary" id="admin_create_btn" data-toggle="modal" data-target="#create_admin_btn">Create Admin</button>
+            </div>
+            <div id="create_admin_btn" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" data-dismiss="modal" class="close">&times;</button>
+                            <h3>
+                                <b>Add new Admin</b>
+                            </h3>
+                        </div>
+                        <div class="modal-body">
+                            <%= form_for :sign_up, url: new_admin_path, method: :get do |a_sign_up| %>
+                                <div class="row" style="margin-top:10px">
+                                    <div class="col-md-6">
+                                        <label>First Name</label>
+                                        <%= a_sign_up.text_field :first_name, :class => "form-control", :placeholder => "First Name", required: true %>
+                                   </div>
+                                </div>
+                                <div class="row" style="margin-top:10px">
+                                    <div class="col-md-6">
+                                        <label>Last Name</label>
+                                        <%= a_sign_up.text_field :last_name, :class => "form-control", :placeholder => "Last Name", required: true %>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:10px">
+                                    <div class="col-md-6">
+                                        <label>Email Id</label>
+                                        <%= a_sign_up.email_field :email, :class => "form-control", :placeholder => "Email", required: true %>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:10px">
+                                    <div class="col-md-6">
+                                        <label>Password</label>
+                                        <%= a_sign_up.password_field :password, :class => "form-control", :placeholder => "Password" %>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:10px">
+                                    <div class="col-md-6">
+                                        <label>Confirm Password</label>
+                                        <%= a_sign_up.password_field :confirm_password, :class => "form-control", :placeholder => "Re-enter Password" %>
+                                    </div>
+                                </div>
+                                <%= a_sign_up.submit "Create", :class => "btn btn-primary", :style => "margin-top:10px" %>
+                                <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="edit_admin_info_btn" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" data-dismiss="modal" class="close">&times;</button>
+                            <h3>
+                                <b>Edit Info</b>
+                            </h3>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row" style="margin-top:10px">
+                                    <div class="col-md-6">
+                                        <label>First Name</label>
+                                        <input type="text" class="form-control" value="Raza" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:10px">
+                                    <div class="col-md-6">
+                                        <label>Last Name</label>
+                                        <input type="text" class="form-control" value="Aslam" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:10px">
+                                    <div class="col-md-6">
+                                        <label>Email Id</label>
+                                        <input type="email" class="form-control" value="raza.aslam29@gmail.com" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:10px">
+                                    <div class="col-md-6">
+                                        <label>Password</label>
+                                        <input type="password" class="form-control" value="Password" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:10px">
+                                    <div class="col-md-6">
+                                        <label>Confirm Password</label>
+                                        <input type="password" class="form-control" value="Password" required>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-primary" style="margin-top:10px">    Update
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-top:10px">
+                <table class="table table-bordered" id="admins_information_table">
+                    <thead>
+                        <tr>
+                            <th>Admin Id</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Registered Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <% @admin = Admin.all %>
+                    <% @admin.each do |a| %>
+                        <tr>
+                            <td><%= a[:id] %></td>
+                            <td><%= a[:first_name] %></td>
+                            <td><%= a[:last_name] %></td>
+                            <td><%= a[:email] %></td>
+                            <td><%= a[:created_at] %></td>
+                            <td>
+                                <%= link_to "Edit", edit_admin_path(a), :class => "btn btn-info", data: { toggle: "modal", target: "#edit_admin_info_btn" } %>
+                                <% if ( a[:id] != 1 && a[:id] != 2 ) %>
+                                    <%= link_to "Delete", admin_path(a), method: :delete, :class => "btn btn-danger", data: { confirm: "Are you sure?" } %>
+                                <% end %>
+                            </td>
+                        </tr>
+                    <% end %>
+                    </tbody>
+                </table>
+                <table class="table table-bordered" id="sellers_information_table" style="display:none">
+                    <thead>
+                        <tr>
+                            <th>Seller Id</th>
+                            <th>Store Name</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Country</th>
+                            <th>Province</th>
+                            <th>City</th>
+                            <th>Phone #</th>
+                            <th>Address 1</th>
+                            <th>Address 2(Optional)</th>
+                            <th>Logo</th>
+                            <th>Rank</th>
+                            <th>Registered Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @seller = Seller.all %>
+                        <% @seller.each do |s| %>
+                        <tr>
+                            <td><%= s[:id] %></td>
+                            <td><%= s[:store_name] %></td>
+                            <td><%= s[:first_name] %></td>
+                            <td><%= s[:last_name] %></td>
+                            <td><%= s[:email] %></td>
+                            <td><%= s[:country] %></td>
+                            <td><%= s[:province] %></td>
+                            <td><%= s[:city] %></td>
+                            <td><%= s[:phone_no] %></td>
+                            <td><%= s[:address_1] %></td>
+                            <td><%= s[:address_2] %></td>
+                            <td><%= s[:logo] %></td>
+                            <td>Super Star</td>
+                            <td><%= s[:created_at] %></td>
+                            <td>
+                                <%= link_to 'Delete', seller_path(s[:id]), method: :delete, :class => "btn btn-primary", :style => "margin-bottom:5px; width:100%", data: { confirm: "Are you sure?" } %>
+                                <br>
+                                <button style="margin-bottom:5px; width:100%" class="btn btn-primary">View Store</button>
+                                <br>
+                                <button style="margin-bottom:5px;" class="btn btn-primary">View Dashboard</button>
+                                <button style="width:100%" class="btn btn-primary">Send Message</button>
+                            </td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+                <table class="table table-bordered" id="buyers_information_table" style="display:none">
+                    <thead>
+                        <tr>
+                            <th>Buyer Id</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone #</th>
+                            <th>Address</th>
+                            <th>Registered Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @buyer = Buyer.all  %>
+                        <% @buyer.each do |b| %>
+                        <tr>
+                            <td><%= b[:id] %></td>
+                            <td><%= b[:first_name] %></td>
+                            <td><%= b[:last_name] %></td>
+                            <td><%= b[:email] %></td>
+                            <td><%= b[:phone_no] %></td>
+                            <td>abds sda ds f</td>
+                            <td><%= b[:created_at] %></td>
+                            <td>
+                                <%= link_to 'Delete', buyer_path(b[:id]), method: :delete, :class => "btn btn-primary", data: { confirm: "Are you sure?" } %>
+                                <button class="btn btn-primary">View Dashboard</button>
+                                <button class="btn btn-primary">Send Message</button>
+                            </td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

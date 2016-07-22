@@ -1,0 +1,2 @@
+module AdminPanelDashboard::AdminPanelDashboardFrontendPagesHelper
+end

@@ -1,0 +1,6 @@
+<%= form_for :cat, url: new_category_path do |f| %>
+	<%= "Enter Category Name : " %>
+	<%= f.text_field :category_name %>
+	<%= f.submit :Create %>
+<% end %>
+<%= link_to :List, category_index_path %>

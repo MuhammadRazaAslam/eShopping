@@ -1,0 +1,15 @@
+
+<%= link_to :Back, admin_panel_dashboard_category_new_path %>
+<h1> List of Categories </h1>
+
+<% @category.each do |cat| %>
+	<%= "Category Id : " %>
+	<%= cat[:id] %>
+	<%= "Category Name : " %>
+	<%= cat[:category_name] %>
+	<%= link_to :Edit, admin_panel_dashboard_category_edit_path("id" => cat[:id], "name" => cat[:category_name]) %>
+	<br><br>
+<% end %>
+
+
+	
